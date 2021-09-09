@@ -10,6 +10,8 @@ module.exports = {
 			red: '#F32735',
 			cayenne: '#C1272D',
 			brown: '#350D18',
+			white: '#f7f7f7',
+			black: '#2f2f2f',
 		},
 		fontFamily: {
 			mon: ['Montserrat'],
@@ -24,6 +26,6 @@ module.exports = {
 	variants: {
 		extend: {},
 	},
-	plugins: [],
+	plugins: [require('@tailwindcss/aspect-ratio')],
 	important: true,
 };

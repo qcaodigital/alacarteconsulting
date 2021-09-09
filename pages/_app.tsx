@@ -5,7 +5,7 @@ import Nav from 'components/nav';
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
-		<div className='font-nun'>
+		<div className='font-nun text-black'>
 			<Nav />
 			<Component {...pageProps} />
 			<footer></footer>

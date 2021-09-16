@@ -17,6 +17,10 @@ a {
 }
 
 /** Tailwind Directives **/
+.layout-short {
+	@apply px-4 py-24 lg:px-[10%] lg:py-24;
+}
+
 .layout {
 	@apply px-4 py-32 lg:px-[10%] lg:py-40;
 }

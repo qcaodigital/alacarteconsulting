@@ -7,7 +7,7 @@ export default function Home() {
 				<title>A La Carte Consulting</title>
 			</Head>
 			<main>
-				<div className='relative layout-tall bg-center bg-cover bg-home-hero'>
+				<section className='relative layout-tall bg-center bg-cover bg-home-hero'>
 					<div className='absolute inset-0 z-0 bg-buttercream/80' />
 					<header className='relative z-10 flex flex-col gap-8 justify-center items-center px-[10%] text-center'>
 						<h1 className='font-mon font-medium text-2xl leading-normal | sm:text-3xl | md:max-w-[20ch]'>
@@ -22,8 +22,8 @@ export default function Home() {
 							View Work
 						</button>
 					</header>
-				</div>
-				<div className='layout py-10 flex items-center justify-center bg-brown | md:py-32'>
+				</section>
+				<section className='layout py-10 flex items-center justify-center bg-brown | md:py-32'>
 					<div className='grid grid-rows-2 gap-8 | md:grid-rows-1 md:grid-cols-2 md:gap-[5vw] | lg:gap-24'>
 						<div className='relative scale-75 | md:scale-[unset] md:top-[-10%] lg:top-[-16%]'>
 							<img
@@ -64,7 +64,7 @@ export default function Home() {
 							</button>
 						</div>
 					</div>
-				</div>
+				</section>
 			</main>
 		</>
 	);

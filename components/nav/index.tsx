@@ -3,32 +3,34 @@ import Image from 'next/image';
 
 export default function Nav() {
 	return (
-		<nav className='fixed top-4 left-1/2 -translate-x-1/2 font-nun font-light z-50'>
+		<nav className='absolute top-4 left-1/2 -translate-x-1/2 tracking-wider z-50'>
 			<ul className='flex items-center justify-center gap-12 uppercase'>
 				<li>
-					<Link href='/'>About</Link>
+					<a href='/about'>About</a>
 				</li>
 				<li>
-					<Link href='/'>Services</Link>
+					<a href='/services'>Services</a>
 				</li>
-				<li className='w-[250px] h-[88.75px] mb-5'>
-					<Image
-						src='/images/logo-light.png'
-						alt='A La Carte Consulting Logo'
-						width={250}
-						height={88.75}
-					/>
+				<li className='w-[250px] h-[88.75px] mb-5 cursor-pointer'>
+					<a href='/'>
+						<Image
+							src='/images/logo-light.png'
+							alt='A La Carte Consulting Logo'
+							width={250}
+							height={88.75}
+						/>
+					</a>
 				</li>
 				<li>
-					<Link href='/'>
-						<div className='text-center leading-none'>
+					<a href='/work'>
+						<div className='text-center leading-none cursor-pointer'>
 							<p>Our</p>
 							<p>Work</p>
 						</div>
-					</Link>
+					</a>
 				</li>
 				<li>
-					<Link href='/'>Contact</Link>
+					<a href='/contact'>Contact</a>
 				</li>
 			</ul>
 		</nav>

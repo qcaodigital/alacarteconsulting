@@ -9,8 +9,8 @@ interface ProfileProps {
 
 function Profile({ image, title, name, description }: ProfileProps) {
 	return (
-		<li className='flex flex-col gap-8 w-72'>
-			<img className='h-96 w-72 object-cover' src={image} alt='' />
+		<li className='flex flex-col gap-8 w-full | md:w-72'>
+			<img className='w-full object-cover | md:h-96 md:w-72' src={image} alt='' />
 			<div className='flex flex-col gap-2'>
 				<p className='uppercase font-medium'>{title}</p>
 				<p className='font-bold tracking-wider uppercase text-xl'>{name}</p>
@@ -38,8 +38,8 @@ export default function About() {
 						</h2>
 					</div>
 				</section>
-				<section className='layout-short'>
-					<ul className='flex justify-center gap-16 max-w-6xl mx-auto'>
+				<section className='px-4 py-8 | md:py-16'>
+					<ul className='flex justify-center gap-8 max-w-6xl mx-auto flex-col | md:gap-16 md:flex-row'>
 						<Profile
 							image='/images/portrait3.png'
 							name='Takeshi Nishikawa'
@@ -47,15 +47,15 @@ export default function About() {
 							description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi dolorem similique eos fuga enim, voluptatum, quam exercitationem adipisci odit eius quo repudiandae molestias nostrum unde beatae officiis consequuntur quia. Recusandae iure commodi libero minus eaque omnis quae error optio aut consequuntur soluta, earum, expedita enim? Cum, id reprehenderit, mollitia provident nisi porro blanditiis in a tempore neque ea at quo eius quos animi illo libero aut. Non vitae adipisci excepturi ducimus explicabo labore voluptatem neque.'
 						/>
 						<Profile
-							image='/images/portrait3.png'
-							name='Nick Workman'
-							title='Software Engineer'
-							description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi dolorem similique eos fuga enim, voluptatum, quam exercitationem adipisci odit eius quo repudiandae molestias nostrum unde beatae officiis consequuntur quia. Recusandae iure commodi libero minus eaque omnis quae error optio aut consequuntur soluta, earum, expedita enim? Cum, id reprehenderit, mollitia provident nisi porro blanditiis in a tempore neque ea at quo eius quos animi illo libero aut. Non vitae adipisci excepturi ducimus explicabo labore voluptatem neque.'
-						/>
-						<Profile
 							image='/images/portrait1.png'
 							name='Laura Nishikawa'
 							title='Graphic Design'
+							description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi dolorem similique eos fuga enim, voluptatum, quam exercitationem adipisci odit eius quo repudiandae molestias nostrum unde beatae officiis consequuntur quia. Recusandae iure commodi libero minus eaque omnis quae error optio aut consequuntur soluta, earum, expedita enim? Cum, id reprehenderit, mollitia provident nisi porro blanditiis in a tempore neque ea at quo eius quos animi illo libero aut. Non vitae adipisci excepturi ducimus explicabo labore voluptatem neque.'
+						/>
+						<Profile
+							image='/images/portrait3.png'
+							name='Quan Cao'
+							title='Software Engineer'
 							description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi dolorem similique eos fuga enim, voluptatum, quam exercitationem adipisci odit eius quo repudiandae molestias nostrum unde beatae officiis consequuntur quia. Recusandae iure commodi libero minus eaque omnis quae error optio aut consequuntur soluta, earum, expedita enim? Cum, id reprehenderit, mollitia provident nisi porro blanditiis in a tempore neque ea at quo eius quos animi illo libero aut. Non vitae adipisci excepturi ducimus explicabo labore voluptatem neque.'
 						/>
 					</ul>

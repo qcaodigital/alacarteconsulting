@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import Link from 'next/link';
 
 export default function Footer() {
 	return (
@@ -14,16 +15,16 @@ export default function Footer() {
 					/>
 					<ul className='flex flex-col items-center justify-center gap-2 uppercase tracking-wide | sm:flex-row sm:gap-8'>
 						<li>
-							<a href='/about'>About</a>
+							<Link href='/about'>About</Link>
 						</li>
 						<li>
-							<a href='/services'>Services</a>
+							<Link href='/services'>Services</Link>
 						</li>
 						<li>
-							<a href='/work'>Our Work</a>
+							<Link href='/work'>Our Work</Link>
 						</li>
 						<li>
-							<a href='/contact'>Contact</a>
+							<Link href='/contact'>Contact</Link>
 						</li>
 					</ul>
 					<div className='border-2 border-black rounded-full p-6 w-6 h-6 flex items-center justify-center mt-2'>

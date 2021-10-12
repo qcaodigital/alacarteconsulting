@@ -9,7 +9,7 @@ export default function Footer() {
 				<div className='absolute inset-0 z-0 bg-buttercream/80' />
 				<div className='relative z-10 flex flex-col justify-center items-center gap-4 mx-4'>
 					<img
-						src='/images/logo-light.png'
+						src='/branding/logo-light.png'
 						alt='A La Carte Consulting Logo'
 						className='filter grayscale brightness-0 w-60'
 					/>

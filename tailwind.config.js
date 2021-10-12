@@ -9,6 +9,8 @@ module.exports = {
 			mandarin: '#FF4D00',
 			red: '#F32735',
 			cayenne: '#C1272D',
+			wine: '#5A2736',
+			wine_light: '#6c3243',
 			brown: '#350D18',
 			white: '#f7f7f7',
 			black: '#2f2f2f',
@@ -26,6 +28,6 @@ module.exports = {
 	variants: {
 		extend: {},
 	},
-	plugins: [require('@tailwindcss/aspect-ratio')],
+	plugins: [require('@tailwindcss/aspect-ratio'), require('@tailwindcss/forms')],
 	important: true,
 };

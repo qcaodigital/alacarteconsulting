@@ -6,11 +6,15 @@ import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import Footer from '@/components/footer';
 import Head from 'next/head';
+import { useCurrentScreenSize } from 'utils/useCurrentScreenSize';
+import { AnimatePresence } from 'framer-motion';
 config.autoAddCss = false;
 
 function MyApp({ Component, pageProps }: AppProps) {
+	const { ScreenSizeContext, screenSizeData } = useCurrentScreenSize();
+
 	return (
-		<>
+		<ScreenSizeContext.Provider {...screenSizeData}>
 			<Head>
 				<link
 					rel='apple-touch-icon'
@@ -33,10 +37,12 @@ function MyApp({ Component, pageProps }: AppProps) {
 			</Head>
 			<div className='font-nun text-black'>
 				<Nav />
-				<Component {...pageProps} />
+				<AnimatePresence>
+					<Component {...pageProps} />
+				</AnimatePresence>
 				<Footer />
 			</div>
-		</>
+		</ScreenSizeContext.Provider>
 	);
 }
 

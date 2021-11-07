@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { useRouter } from 'next/router';
+import LinkWithSubpath from './LinkWithSubpath';
 
 export default function Nav() {
 	const { screenSizeNot } = useScreenSizeContext();
@@ -22,11 +23,23 @@ export default function Nav() {
 							key={n.href}
 							className={`${
 								n.href === '/' ? 'w-[250px] h-[88.75px] mb-5 cursor-pointer' : ''
-							} ${baseRoute === 'services' ? 'text-white' : ''}`}
+							} ${baseRoute === 'services' ? 'text-white' : ''} cursor-pointer`}
 						>
-							<Link href={n.href}>
-								{baseRoute === 'services' ? n.darkModeLabel || n.label : n.label}
-							</Link>
+							{n.subpaths ? (
+								<LinkWithSubpath
+									path={n.href}
+									subpaths={n.subpaths}
+									label={n.label}
+								/>
+							) : (
+								<div className='transition duration-200 | hover:opacity-75'>
+									<Link href={n.href}>
+										{baseRoute === 'services'
+											? n.darkModeLabel || n.label
+											: n.label}
+									</Link>
+								</div>
+							)}
 						</li>
 					))}
 				</ul>

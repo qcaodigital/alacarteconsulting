@@ -10,26 +10,27 @@ export default function BusinessPlanning() {
 				'vitae semper quis lectus nulla at volutpat diam ut venenatis tellus in metus vulputate eu',
 			]}
 			backgroundImage='/images/business-planning-bg.jpeg'
+			iconColor='text-cayenne'
 			iconList={[
 				{
 					icon: '/graphics/svg/icon-financial-analysis.svg',
-					text: 'Financial Analysis & Management',
+					text: ['Financial Analysis', '& Management'],
 				},
 				{
 					icon: '/graphics/svg/icon-employee-training.svg',
-					text: 'Employee Training Material',
+					text: ['Employee Training', 'Material'],
 				},
 				{
 					icon: '/graphics/svg/icon-labor-costing.svg',
-					text: 'Labor Costing, Projection, & Analysis',
+					text: ['Labor Costing,', 'Projection, & Analysis'],
 				},
 				{
 					icon: '/graphics/svg/icon-catering-proposals.svg',
-					text: 'Catering & Private Event Proposals',
+					text: ['Catering & Private', 'Event Proposals'],
 				},
 				{
 					icon: '/graphics/svg/icon-inventory-management.svg',
-					text: 'Inventory Management',
+					text: ['Inventory', 'Management'],
 				},
 			]}
 		/>

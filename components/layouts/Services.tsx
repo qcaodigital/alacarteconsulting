@@ -1,10 +1,12 @@
 import { fadeInOut } from '@/utils/fadeInOut';
 import { motion } from 'framer-motion';
+import _ from 'lodash';
 import Head from 'next/head';
+import { ReactSVG } from 'react-svg';
 
 interface IIconItem {
 	icon: string;
-	text: string;
+	text: string | string[];
 }
 
 interface ServicesProps {
@@ -13,6 +15,7 @@ interface ServicesProps {
 	header: string;
 	subheaders: string[];
 	iconList: IIconItem[];
+	iconColor?: string;
 }
 
 export default function Services({
@@ -21,6 +24,7 @@ export default function Services({
 	header,
 	subheaders,
 	iconList,
+	iconColor = 'text-black',
 }: ServicesProps) {
 	return (
 		<motion.main key={componentKey} {...fadeInOut}>
@@ -50,14 +54,18 @@ export default function Services({
 				<ul className='grid grid-cols-6 max-w-4xl mx-auto items-end gap-y-24 gap-x-24'>
 					{iconList.map(({ icon, text }, idx) => (
 						<li
-							key={text}
+							key={_.isArray(text) ? text.join(' ') : text}
 							className={`flex flex-col justify-center items-center gap-8 ${
 								idx === 3 ? 'col-start-2 col-end-4' : 'col-span-2'
 							}`}
 						>
-							<img src={icon} alt={text} className='object-contain h-[100px]' />
+							<ReactSVG
+								src={icon}
+								id='services-svg'
+								className={`${iconColor} fill-current`}
+							/>
 							<p className='font-mon font-medium tracking-wide uppercase text-center max-w-[30ch]'>
-								{text}
+								{_.isArray(text) ? text.map((t) => <p>{t}</p>) : text}
 							</p>
 						</li>
 					))}

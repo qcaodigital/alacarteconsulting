@@ -65,7 +65,7 @@ export default function Services({
 								className={`${iconColor} fill-current`}
 							/>
 							<p className='font-mon font-medium tracking-wide uppercase text-center max-w-[30ch]'>
-								{_.isArray(text) ? text.map((t) => <p>{t}</p>) : text}
+								{_.isArray(text) ? text.map((t) => <p key={t}>{t}</p>) : text}
 							</p>
 						</li>
 					))}

@@ -25,7 +25,10 @@ export default function LinkWithSubpath({ path, label, subpaths }: LinkWithSubpa
 						exit={{ opacity: 0, y: 10 }}
 					>
 						{subpaths.map((sub) => (
-							<li className='whitespace-nowrap text-center transition duration-200 | hover:opacity-75'>
+							<li
+								key={sub.label}
+								className='whitespace-nowrap text-center transition duration-200 | hover:opacity-75'
+							>
 								<Link href={path + sub.href}>{sub.label}</Link>
 							</li>
 						))}

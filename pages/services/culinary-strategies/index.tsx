@@ -12,23 +12,23 @@ export default function CulinaryStrategies() {
 			backgroundImage='/images/business-planning-bg.jpeg'
 			iconList={[
 				{
-					icon: '/graphics/icon-financial-analysis.png',
+					icon: '/graphics/svg/icon-financial-analysis.svg',
 					text: 'Menu Development',
 				},
 				{
-					icon: '/graphics/Icon_Employee Training.png',
+					icon: '/graphics/svg/icon-waste-management.svg',
 					text: 'Waste Reduction & Loss Prevention',
 				},
 				{
-					icon: '/graphics/Icon_Labor Costing.png',
+					icon: '/graphics/svg/icon-food-cost-managing.svg',
 					text: 'Food Cost Management',
 				},
 				{
-					icon: '/graphics/Icon_Catering Proposals.png',
+					icon: '/graphics/svg/icon-plate-menu-cost.svg',
 					text: 'Plate & Menu Costing',
 				},
 				{
-					icon: '/graphics/Icon_Inventory Management.png',
+					icon: '/graphics/svg/icon-purchasing-and-ordering-guide.svg',
 					text: 'Purchasing & Ordering Guide',
 				},
 			]}

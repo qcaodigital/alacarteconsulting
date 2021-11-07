@@ -1,7 +1,6 @@
 import { fadeInOut } from '@/utils/fadeInOut';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
-import Image from 'next/image';
 
 interface IIconItem {
 	icon: string;

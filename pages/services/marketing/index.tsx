@@ -12,24 +12,24 @@ export default function Marketing() {
 			backgroundImage='/images/business-planning-bg.jpeg'
 			iconList={[
 				{
-					icon: '/graphics/icon-financial-analysis.png',
-					text: 'Financial Analysis & Management',
+					icon: '/graphics/svg/icon-logo-and-packaging-design.svg',
+					text: 'Logo & Packaging Design',
 				},
 				{
-					icon: '/graphics/Icon_Employee Training.png',
-					text: 'Employee Training Material',
+					icon: '/graphics/svg/icon-menu-design.svg',
+					text: 'Print & Digital Menu Design',
 				},
 				{
-					icon: '/graphics/Icon_Labor Costing.png',
-					text: 'Labor Costing, Projection, & Analysis',
+					icon: '/graphics/svg/icon-interactive-web-design.svg',
+					text: 'Interactive Web Design',
 				},
 				{
-					icon: '/graphics/Icon_Catering Proposals.png',
-					text: 'Catering & Private Event Proposals',
+					icon: '/graphics/svg/icon-seo.svg',
+					text: 'Search Engine Optimization',
 				},
 				{
-					icon: '/graphics/Icon_Inventory Management.png',
-					text: 'Inventory Management',
+					icon: '/graphics/svg/icon-photo-and-video.svg',
+					text: 'Photography & Video',
 				},
 			]}
 		/>

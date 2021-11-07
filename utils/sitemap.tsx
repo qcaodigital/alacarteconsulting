@@ -1,8 +1,14 @@
 import Image from 'next/image';
 
+export interface ISubpathItem {
+	label: string;
+	href: string;
+}
+
 interface INavItem {
 	href: string;
 	label: string | JSX.Element;
+	subpaths?: ISubpathItem[];
 	darkModeLabel?: string | JSX.Element;
 }
 
@@ -14,6 +20,11 @@ export const sitemap: INavItem[] = [
 	{
 		href: '/services',
 		label: 'Services',
+		subpaths: [
+			{ href: '/culinary-strategies', label: 'Culinary Strategies' },
+			{ href: '/business-planning', label: 'Business Planning' },
+			{ href: '/marketing', label: 'Marketing' },
+		],
 	},
 	{
 		href: '/',
@@ -37,7 +48,7 @@ export const sitemap: INavItem[] = [
 	{
 		href: '/work',
 		label: (
-			<div className='text-center leading-none cursor-pointer'>
+			<div className='flex flex-col text-center cursor-pointer'>
 				<p>Our</p>
 				<p>Work</p>
 			</div>

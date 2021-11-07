@@ -10,26 +10,27 @@ export default function CulinaryStrategies() {
 				'vitae semper quis lectus nulla at volutpat diam ut venenatis tellus in metus vulputate eu',
 			]}
 			backgroundImage='/images/business-planning-bg.jpeg'
+			iconColor='text-red'
 			iconList={[
 				{
-					icon: '/graphics/icon-financial-analysis.png',
-					text: 'Menu Development',
+					icon: '/graphics/svg/icon-financial-analysis.svg',
+					text: ['Menu', 'Development'],
 				},
 				{
-					icon: '/graphics/Icon_Employee Training.png',
-					text: 'Waste Reduction & Loss Prevention',
+					icon: '/graphics/svg/icon-waste-management.svg',
+					text: ['Waste Reduction', '& Loss Prevention'],
 				},
 				{
-					icon: '/graphics/Icon_Labor Costing.png',
-					text: 'Food Cost Management',
+					icon: '/graphics/svg/icon-food-cost-managing.svg',
+					text: ['Food Cost', 'Management'],
 				},
 				{
-					icon: '/graphics/Icon_Catering Proposals.png',
-					text: 'Plate & Menu Costing',
+					icon: '/graphics/svg/icon-plate-menu-cost.svg',
+					text: ['Plate &', 'Menu Costing'],
 				},
 				{
-					icon: '/graphics/Icon_Inventory Management.png',
-					text: 'Purchasing & Ordering Guide',
+					icon: '/graphics/svg/icon-purchasing-and-ordering-guide.svg',
+					text: ['Purchasing &', 'Ordering Guide'],
 				},
 			]}
 		/>

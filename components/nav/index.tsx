@@ -30,6 +30,7 @@ export default function Nav() {
 									path={n.href}
 									subpaths={n.subpaths}
 									label={n.label}
+									darkLabel={baseRoute === 'services'}
 								/>
 							) : (
 								<div className='transition duration-200 | hover:opacity-75'>

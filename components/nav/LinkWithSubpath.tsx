@@ -8,14 +8,20 @@ interface LinkWithSubpathProps {
 	path: string;
 	subpaths: ISubpathItem[];
 	label: string | ReactElement;
+	darkLabel: boolean;
 }
 
-export default function LinkWithSubpath({ path, label, subpaths }: LinkWithSubpathProps) {
+export default function LinkWithSubpath({
+	path,
+	label,
+	subpaths,
+	darkLabel,
+}: LinkWithSubpathProps) {
 	const { isHovered, ref } = useIsHovered();
 
 	return (
 		<div ref={ref} className='relative'>
-			<p className={isHovered ? 'opacity-50' : ''}>{label}</p>
+			<p className={isHovered ? 'opacity-50 transition duration-200' : '' + ''}>{label}</p>
 			<AnimatePresence>
 				{isHovered && (
 					<motion.ul
@@ -24,10 +30,15 @@ export default function LinkWithSubpath({ path, label, subpaths }: LinkWithSubpa
 						animate={{ opacity: 1, y: 0 }}
 						exit={{ opacity: 0, y: 10 }}
 					>
+						<div
+							className={`w-[1px] h-6 my-2 mx-auto opacity-25 ${
+								darkLabel ? 'bg-white' : 'bg-black'
+							}`}
+						/>
 						{subpaths.map((sub) => (
 							<li
 								key={sub.label}
-								className='whitespace-nowrap text-center transition duration-200 | hover:opacity-75'
+								className='whitespace-nowrap text-center transition duration-200 | hover:opacity-50'
 							>
 								<Link href={path + sub.href}>{sub.label}</Link>
 							</li>

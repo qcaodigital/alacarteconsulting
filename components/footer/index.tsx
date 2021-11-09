@@ -32,7 +32,7 @@ export default function Footer() {
 		setSubpathParent(undefined);
 	};
 
-	useEffect(() => resetFooterNav(), [history]);
+	useEffect(resetFooterNav, [history]);
 
 	return (
 		<footer>
@@ -55,7 +55,7 @@ export default function Footer() {
 									(item) =>
 										(typeof item.label === 'string' || item.labelAsString) &&
 										!openSubpath && (
-											<FooterLink>
+											<FooterLink key={item.href}>
 												{!item.subpaths ? (
 													<Link href={item.href}>
 														{typeof item.label === 'string'
@@ -64,6 +64,7 @@ export default function Footer() {
 													</Link>
 												) : (
 													<div
+														key={item.href}
 														onClick={() => {
 															setOpenSubpath(item.subpaths);
 															setSubpathParent({
@@ -98,7 +99,7 @@ export default function Footer() {
 										<FontAwesomeIcon icon={faArrowLeft} />
 									</li>
 									{openSubpath.map((item) => (
-										<FooterLink>
+										<FooterLink key={item.href}>
 											<Link href={subpathParent?.basePath + item.href}>
 												{item.label}
 											</Link>

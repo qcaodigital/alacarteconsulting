@@ -1,9 +1,39 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import Link from 'next/link';
-import { sitemap } from '@/utils/sitemap';
+import { sitemap, ISubpathItem } from '@/utils/sitemap';
+import { useState, ReactElement, useEffect } from 'react';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useRouter } from 'next/router';
+
+const FooterLink = ({ children }: { children: ReactElement }) => (
+	<li className='cursor-pointer relative transition duration-200 | after:block after:absolute after:w-full after:h-[1px] after:bg-black after:scale-x-0 after:transition after:duration-300 | hover:after:scale-x-100 hover:opacity-75'>
+		{children}
+	</li>
+);
+
+const listAnimation = {
+	initial: { opacity: 0 },
+	exit: { opacity: 0 },
+	animate: { opacity: 1 },
+};
 
 export default function Footer() {
+	const [subpathParent, setSubpathParent] = useState<
+		{ label: string; basePath: string } | undefined
+	>();
+	const [openSubpath, setOpenSubpath] = useState<ISubpathItem[] | undefined>();
+	const router = useRouter();
+	const history = router.pathname;
+
+	const resetFooterNav = () => {
+		setOpenSubpath(undefined);
+		setSubpathParent(undefined);
+	};
+
+	useEffect(() => resetFooterNav(), [history]);
+
 	return (
 		<footer>
 			<div className='relative layout bg-bottom bg-cover bg-home-hero shadow-xl-top'>
@@ -14,20 +44,70 @@ export default function Footer() {
 						alt='A La Carte Consulting Logo'
 						className='filter grayscale brightness-0 w-60'
 					/>
-					<ul className='flex flex-col items-center justify-center gap-2 uppercase tracking-wide | sm:flex-row sm:gap-8'>
-						{sitemap.map(
-							(item) =>
-								(typeof item.label === 'string' || item.labelAsString) && (
-									<li onClick={() => false}>
-										<Link href={!item.subpaths ? item.href : '/'}>
-											{typeof item.label === 'string'
-												? item.label
-												: item.labelAsString}
-										</Link>
+					<div className='uppercase tracking-wide | sm:flex-row sm:gap-8'>
+						<AnimatePresence exitBeforeEnter>
+							<motion.ul
+								key='main'
+								className='flex flex-col items-center justify-center gap-2 | sm:flex-row sm:gap-8'
+								{...listAnimation}
+							>
+								{sitemap.map(
+									(item) =>
+										(typeof item.label === 'string' || item.labelAsString) &&
+										!openSubpath && (
+											<FooterLink>
+												{!item.subpaths ? (
+													<Link href={item.href}>
+														{typeof item.label === 'string'
+															? item.label
+															: item.labelAsString}
+													</Link>
+												) : (
+													<div
+														onClick={() => {
+															setOpenSubpath(item.subpaths);
+															setSubpathParent({
+																label:
+																	typeof item.label === 'string'
+																		? item.label
+																		: item.labelAsString ?? '',
+																basePath: item.href,
+															});
+														}}
+													>
+														{typeof item.label === 'string'
+															? item.label
+															: item.labelAsString}
+													</div>
+												)}
+											</FooterLink>
+										)
+								)}
+							</motion.ul>
+							{openSubpath && (
+								<motion.ul
+									key='subpath'
+									className='flex flex-col items-center justify-center gap-2 | sm:flex-row sm:gap-8'
+									{...listAnimation}
+								>
+									<li
+										className='cursor-pointer transition duration-200 | hover:opacity-50'
+										onClick={resetFooterNav}
+										title='Back'
+									>
+										<FontAwesomeIcon icon={faArrowLeft} />
 									</li>
-								)
-						)}
-					</ul>
+									{openSubpath.map((item) => (
+										<FooterLink>
+											<Link href={subpathParent?.basePath + item.href}>
+												{item.label}
+											</Link>
+										</FooterLink>
+									))}
+								</motion.ul>
+							)}
+						</AnimatePresence>
+					</div>
 					<div className='border-2 border-black rounded-full p-6 w-6 h-6 flex items-center justify-center mt-2'>
 						<FontAwesomeIcon icon={faLinkedinIn} size='lg' />
 					</div>

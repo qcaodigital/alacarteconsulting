@@ -77,7 +77,7 @@ export default function Contact() {
 							className='uppercase mb-1 text-sm tracking-wide font-nun font-bold'
 							htmlFor='details'
 						>
-							Give A Few Details About Your Project
+							Give Us A Few Details About Your Project
 						</label>
 						<textarea
 							className='bg-wine_light border-none py-2 resize-none h-60 text-sm | focus:ring-yellow'

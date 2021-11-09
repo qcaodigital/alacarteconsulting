@@ -39,11 +39,13 @@ export default function Footer() {
 			<div className='relative layout bg-bottom bg-cover bg-home-hero shadow-xl-top'>
 				<div className='absolute inset-0 z-0 bg-buttercream/80' />
 				<div className='relative z-10 flex flex-col justify-center items-center gap-4 mx-4'>
-					<img
-						src='/branding/logo-light.png'
-						alt='A La Carte Consulting Logo'
-						className='filter grayscale brightness-0 w-60'
-					/>
+					<Link href='/'>
+						<img
+							src='/branding/logo-light.png'
+							alt='A La Carte Consulting Logo'
+							className='filter grayscale brightness-0 w-60 cursor-pointer'
+						/>
+					</Link>
 					<div className='uppercase tracking-wide | sm:flex-row sm:gap-8'>
 						<AnimatePresence exitBeforeEnter>
 							<motion.ul

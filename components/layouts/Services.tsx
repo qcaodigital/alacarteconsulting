@@ -57,16 +57,16 @@ export default function Services({
 					{iconList.map(({ icon, text }, idx) => (
 						<li
 							key={_.isArray(text) ? text.join(' ') : text}
-							className={`group flex flex-col justify-center bg-white/25 items-center gap-6 shadow-md p-4 rounded-sm transition duration-200 cursor-pointer | hover:scale-105 ${iconBorderColor} hover:ring-2 ${
+							className={`flex flex-col justify-center bg-white/25 items-center gap-6 shadow-md p-4 rounded-sm transition duration-300 cursor-pointer | hover:shadow-lg ${iconBorderColor} hover:ring-2 ${
 								idx === 3 ? 'col-start-2 col-end-4' : 'col-span-2'
 							}`}
 						>
 							<ReactSVG
 								src={icon}
 								id='services-svg'
-								className={`${iconColor} fill-current transition duration-200 | group-hover:scale-95`}
+								className={`${iconColor} fill-current`}
 							/>
-							<p className='font-mon font-medium text-sm tracking-wide uppercase text-center max-w-[30ch] transition duration-200 | group-hover:scale-95'>
+							<p className='font-mon font-medium text-sm tracking-wide uppercase text-center max-w-[30ch]'>
 								{_.isArray(text)
 									? text.map((t) => (
 											<p key={t} className='whitespace-nowrap'>

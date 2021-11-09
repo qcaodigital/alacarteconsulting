@@ -8,6 +8,7 @@ export interface ISubpathItem {
 interface INavItem {
 	href: string;
 	label: string | JSX.Element;
+	labelAsString?: string;
 	subpaths?: ISubpathItem[];
 	darkModeLabel?: string | JSX.Element;
 }
@@ -53,6 +54,7 @@ export const sitemap: INavItem[] = [
 				<p>Work</p>
 			</div>
 		),
+		labelAsString: 'Our Work',
 	},
 	{
 		href: '/contact',

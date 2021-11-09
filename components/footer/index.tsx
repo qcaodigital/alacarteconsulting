@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import Link from 'next/link';
+import { sitemap } from '@/utils/sitemap';
 
 export default function Footer() {
 	return (
@@ -14,18 +15,18 @@ export default function Footer() {
 						className='filter grayscale brightness-0 w-60'
 					/>
 					<ul className='flex flex-col items-center justify-center gap-2 uppercase tracking-wide | sm:flex-row sm:gap-8'>
-						<li>
-							<Link href='/about'>About</Link>
-						</li>
-						<li>
-							<Link href='/services'>Services</Link>
-						</li>
-						<li>
-							<Link href='/work'>Our Work</Link>
-						</li>
-						<li>
-							<Link href='/contact'>Contact</Link>
-						</li>
+						{sitemap.map(
+							(item) =>
+								(typeof item.label === 'string' || item.labelAsString) && (
+									<li onClick={() => false}>
+										<Link href={!item.subpaths ? item.href : '/'}>
+											{typeof item.label === 'string'
+												? item.label
+												: item.labelAsString}
+										</Link>
+									</li>
+								)
+						)}
 					</ul>
 					<div className='border-2 border-black rounded-full p-6 w-6 h-6 flex items-center justify-center mt-2'>
 						<FontAwesomeIcon icon={faLinkedinIn} size='lg' />

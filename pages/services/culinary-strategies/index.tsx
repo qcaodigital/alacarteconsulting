@@ -11,6 +11,7 @@ export default function CulinaryStrategies() {
 			]}
 			backgroundImage='/images/business-planning-bg.jpeg'
 			iconColor='text-red'
+			iconBorderColor='hover:ring-red/50'
 			iconList={[
 				{
 					icon: '/graphics/svg/icon-financial-analysis.svg',

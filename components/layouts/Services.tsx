@@ -16,6 +16,7 @@ interface ServicesProps {
 	subheaders: string[];
 	iconList: IIconItem[];
 	iconColor?: string;
+	iconBorderColor?: string;
 }
 
 export default function Services({
@@ -25,6 +26,7 @@ export default function Services({
 	subheaders,
 	iconList,
 	iconColor = 'text-black',
+	iconBorderColor = 'transparent',
 }: ServicesProps) {
 	return (
 		<motion.main key={componentKey} {...fadeInOut}>
@@ -32,7 +34,7 @@ export default function Services({
 				<title>A La Carte Consulting | {header}</title>
 			</Head>
 			<section
-				className='relative layout-tall bg-center bg-cover'
+				className='relative layout-tall bg-center bg-cover shadow-xl'
 				style={{ backgroundImage: `url(${backgroundImage}` }}
 			>
 				<div className='absolute inset-0 z-0 bg-brown/75' />
@@ -50,22 +52,28 @@ export default function Services({
 					))}
 				</header>
 			</section>
-			<section className='py-24 bg-white'>
+			<section className='py-24 bg-grey'>
 				<ul className='grid grid-cols-6 max-w-4xl mx-auto items-end gap-y-24 gap-x-24'>
 					{iconList.map(({ icon, text }, idx) => (
 						<li
 							key={_.isArray(text) ? text.join(' ') : text}
-							className={`flex flex-col justify-center items-center gap-8 ${
+							className={`group flex flex-col justify-center bg-white/25 items-center gap-6 shadow-md p-4 rounded-sm transition duration-200 cursor-pointer | hover:scale-105 ${iconBorderColor} hover:ring-2 ${
 								idx === 3 ? 'col-start-2 col-end-4' : 'col-span-2'
 							}`}
 						>
 							<ReactSVG
 								src={icon}
 								id='services-svg'
-								className={`${iconColor} fill-current`}
+								className={`${iconColor} fill-current transition duration-200 | group-hover:scale-95`}
 							/>
-							<p className='font-mon font-medium tracking-wide uppercase text-center max-w-[30ch]'>
-								{_.isArray(text) ? text.map((t) => <p key={t}>{t}</p>) : text}
+							<p className='font-mon font-medium text-sm tracking-wide uppercase text-center max-w-[30ch] transition duration-200 | group-hover:scale-95'>
+								{_.isArray(text)
+									? text.map((t) => (
+											<p key={t} className='whitespace-nowrap'>
+												{t}
+											</p>
+									  ))
+									: text}
 							</p>
 						</li>
 					))}

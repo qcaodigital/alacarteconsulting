@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default function Footer() {
 	return (
 		<footer>
-			<div className='relative layout bg-bottom bg-cover bg-home-hero'>
+			<div className='relative layout bg-bottom bg-cover bg-home-hero shadow-xl-top'>
 				<div className='absolute inset-0 z-0 bg-buttercream/80' />
 				<div className='relative z-10 flex flex-col justify-center items-center gap-4 mx-4'>
 					<img

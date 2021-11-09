@@ -11,6 +11,7 @@ export default function Marketing() {
 			]}
 			backgroundImage='/images/business-planning-bg.jpeg'
 			iconColor='text-mandarin'
+			iconBorderColor='hover:ring-mandarin/50'
 			iconList={[
 				{
 					icon: '/graphics/svg/icon-logo-and-packaging-design.svg',

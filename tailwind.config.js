@@ -13,6 +13,7 @@ module.exports = {
 			wine_light: '#6c3243',
 			brown: '#350D18',
 			white: '#f7f7f7',
+			grey: '#f2f2f2',
 			black: '#2f2f2f',
 		},
 		fontFamily: {

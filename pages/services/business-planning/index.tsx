@@ -11,6 +11,7 @@ export default function BusinessPlanning() {
 			]}
 			backgroundImage='/images/business-planning-bg.jpeg'
 			iconColor='text-cayenne'
+			iconBorderColor='hover:ring-cayenne/50'
 			iconList={[
 				{
 					icon: '/graphics/svg/icon-financial-analysis.svg',

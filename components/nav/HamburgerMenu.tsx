@@ -23,6 +23,7 @@ export function HamburgerMenu({ toggleHbm }: HamburgerMenuProps) {
 					.filter((item) => item.labelAsString || typeof item.label === 'string')
 					.map((item) => (
 						<li
+							key={item.href}
 							className='font-mon text-lg transition duration-200 | hover:opacity-75'
 							onClick={!item.subpaths ? toggleHbm : undefined}
 						>

@@ -28,7 +28,7 @@ export default function About() {
 			<Head>
 				<title>A La Carte Consulting | About</title>
 			</Head>
-			<section className='relative layout-tall bg-center bg-cover bg-home-hero'>
+			<section className='relative layout-tall bg-center bg-cover bg-home-hero shadow-sm'>
 				<div className='absolute inset-0 z-0 bg-buttercream/80' />
 				<div className='relative z-10 flex flex-col justify-center items-center gap-4'>
 					<img src='/graphics/team-icon.png' alt='' className='w-28' />
@@ -39,7 +39,7 @@ export default function About() {
 					</h2>
 				</div>
 			</section>
-			<section className='px-4 py-8 | md:py-16'>
+			<section className='px-4 py-8 bg-grey/50 | md:py-16'>
 				<ul className='flex justify-center gap-8 max-w-6xl mx-auto flex-col | md:gap-16 md:flex-row'>
 					<Profile
 						image='/images/portrait3.png'

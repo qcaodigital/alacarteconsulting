@@ -2,6 +2,7 @@ import { fadeInOut } from '@/utils/fadeInOut';
 import { motion } from 'framer-motion';
 import _ from 'lodash';
 import Head from 'next/head';
+import { useState } from 'react';
 import { ReactSVG } from 'react-svg';
 
 interface IIconItem {
@@ -28,6 +29,8 @@ export default function Services({
 	iconColor = 'text-black',
 	iconBorderColor = 'transparent',
 }: ServicesProps) {
+	const [activeService, setActiveService] = useState<IIconItem | null>(null);
+
 	return (
 		<motion.main key={componentKey} {...fadeInOut}>
 			<Head>
@@ -52,32 +55,66 @@ export default function Services({
 					))}
 				</header>
 			</section>
+
 			<section className='py-24 bg-grey'>
-				<ul className='grid grid-cols-6 max-w-4xl mx-auto items-end gap-y-24 gap-x-24'>
-					{iconList.map(({ icon, text }, idx) => (
-						<li
-							key={_.isArray(text) ? text.join(' ') : text}
-							className={`flex flex-col justify-center bg-white/25 items-center gap-6 shadow-md p-4 rounded-sm transition duration-300 cursor-pointer | hover:shadow-lg ${iconBorderColor} hover:ring-2 ${
-								idx === 3 ? 'col-start-2 col-end-4' : 'col-span-2'
-							}`}
-						>
-							<ReactSVG
-								src={icon}
-								id='services-svg'
-								className={`${iconColor} fill-current`}
-							/>
-							<p className='font-mon font-medium text-sm tracking-wide uppercase text-center max-w-[30ch]'>
-								{_.isArray(text)
-									? text.map((t) => (
-											<p key={t} className='whitespace-nowrap'>
-												{t}
-											</p>
-									  ))
-									: text}
-							</p>
-						</li>
-					))}
-				</ul>
+				{!activeService ? (
+					<ul className='grid grid-cols-6 max-w-4xl mx-auto items-end gap-y-24 gap-x-24'>
+						{iconList.map(({ icon, text }, idx) => (
+							<li
+								key={_.isArray(text) ? text.join(' ') : text}
+								className={`flex flex-col justify-center bg-white/25 items-center gap-6 shadow-md p-4 rounded-sm transition duration-300 cursor-pointer | hover:shadow-lg ${iconBorderColor} hover:ring-2 ${
+									idx === 3 ? 'col-start-2 col-end-4' : 'col-span-2'
+								}`}
+								onClick={() => setActiveService({ icon, text })}
+							>
+								<ReactSVG
+									src={icon}
+									id='services-svg'
+									className={`${iconColor} fill-current`}
+								/>
+								<p className='font-mon font-medium text-sm tracking-wide uppercase text-center max-w-[30ch]'>
+									{_.isArray(text)
+										? text.map((t) => (
+												<p key={t} className='whitespace-nowrap'>
+													{t}
+												</p>
+										  ))
+										: text}
+								</p>
+							</li>
+						))}
+					</ul>
+				) : (
+					<div
+						className={`grid grid-cols-6 grid-rows-2 max-w-5xl
+						} mx-auto items-end gap-y-24 gap-x-24`}
+					>
+						{iconList
+							.filter((item) => item.text === activeService.text)
+							.map(({ icon, text }) => (
+								<li
+									key={_.isArray(text) ? text.join(' ') : text}
+									className={`flex flex-col justify-center bg-white/25 items-center gap-6 p-4 rounded-sm transition duration-300 cursor-pointer col-span-2`}
+									// onClick={() => setActiveService({ icon, text })}
+								>
+									<p className='font-mon font-medium text-sm tracking-wide uppercase text-center max-w-[30ch]'>
+										{_.isArray(text)
+											? text.map((t) => (
+													<p key={t} className='whitespace-nowrap'>
+														{t}
+													</p>
+											  ))
+											: text}
+									</p>
+									<ReactSVG
+										src={icon}
+										id='services-svg'
+										className={`${iconColor} fill-current`}
+									/>
+								</li>
+							))}
+					</div>
+				)}
 			</section>
 		</motion.main>
 	);

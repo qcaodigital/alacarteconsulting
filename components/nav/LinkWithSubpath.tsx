@@ -21,7 +21,7 @@ export default function LinkWithSubpath({
 
 	return (
 		<div ref={ref} className='relative'>
-			<p className={isHovered ? 'opacity-50 transition duration-200' : '' + ''}>{label}</p>
+			<p className={isHovered ? 'opacity-50 transition duration-200' : ''}>{label}</p>
 			<AnimatePresence>
 				{isHovered && (
 					<motion.ul

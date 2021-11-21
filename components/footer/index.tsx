@@ -1,5 +1,4 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import Link from 'next/link';
 import { sitemap, ISubpathItem } from '@/utils/sitemap';
 import { useState, ReactElement, useEffect } from 'react';

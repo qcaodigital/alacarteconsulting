@@ -5,7 +5,7 @@ export interface ISubpathItem {
 	href: string;
 }
 
-interface INavItem {
+export interface INavItem {
 	href: string;
 	label: string | JSX.Element;
 	labelAsString?: string;

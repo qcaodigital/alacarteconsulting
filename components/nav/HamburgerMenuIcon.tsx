@@ -14,17 +14,17 @@ function HamburgerMenuIcon({ opened, onClick, colorMode }: HamburgerMenuIconProp
 			}`}
 		>
 			<div
-				className={`w-8 h-0.5 ${color} transition duration-300 ${
+				className={`w-6 h-0.5 ${color} transition duration-300 ${
 					opened ? 'transform translate-y-[7.5px] rotate-90' : ''
 				}`}
 			/>
 			<div
-				className={`w-8 h-0.5 ${color} transition duration-200 ${
+				className={`w-6 h-0.5 ${color} transition duration-200 ${
 					opened ? 'transform scale-y-0 opacity-0' : ''
 				}`}
 			/>
 			<div
-				className={`w-8 h-0.5 ${color} transition duration-300 ${
+				className={`w-6 h-0.5 ${color} transition duration-300 ${
 					opened ? 'transform -translate-y-1' : ''
 				}`}
 			/>

@@ -42,7 +42,9 @@ export default function Nav() {
 					))}
 				</ul>
 			) : (
-				<MobileNav />
+				<div>
+					<MobileNav />
+				</div>
 			)}
 		</nav>
 	);

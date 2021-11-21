@@ -26,6 +26,8 @@ export default function Footer() {
 	const [openSubpath, setOpenSubpath] = useState<ISubpathItem[] | undefined>();
 	const router = useRouter();
 	const history = router.pathname;
+	const basePath = router.pathname.split('/')[1];
+	const whiteFooter: boolean = basePath === 'contact';
 
 	const resetFooterNav = () => {
 		setOpenSubpath(undefined);
@@ -37,7 +39,11 @@ export default function Footer() {
 	return (
 		<footer>
 			<div className='relative layout bg-bottom bg-cover bg-home-hero shadow-xl-top'>
-				<div className='absolute inset-0 z-0 bg-buttercream/80' />
+				<div
+					className={`absolute inset-0 z-0 ${
+						whiteFooter ? 'bg-white/80' : 'bg-buttercream/80'
+					}`}
+				/>
 				<div className='relative z-10 flex flex-col justify-center items-center gap-4 mx-4'>
 					<Link href='/'>
 						<img
@@ -111,9 +117,9 @@ export default function Footer() {
 							)}
 						</AnimatePresence>
 					</div>
-					<div className='border-2 border-black rounded-full p-6 w-6 h-6 flex items-center justify-center mt-2'>
+					{/* <div className='border-2 border-black rounded-full p-6 w-6 h-6 flex items-center justify-center mt-2'>
 						<FontAwesomeIcon icon={faLinkedinIn} size='lg' />
-					</div>
+					</div> */}
 					<p className='text-center max-w-[45ch] font-mon text-sm font-medium'>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta repellat
 						nihil nesciunt sed, quisquam fuga tempora. Lorem ipsum dolor sit amet.

@@ -9,9 +9,13 @@ import { AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/router';
 
 export default function MobileNav() {
-	const router = useRouter();
-	const colorMode = router.pathname.split('/')[1] === 'services' ? 'light' : 'dark';
 	const [hbmOpened, setHbmOpened] = useState<boolean>(false);
+	const router = useRouter();
+	const colorMode = hbmOpened
+		? 'dark'
+		: router.pathname.split('/')[1] === 'services'
+		? 'light'
+		: 'dark';
 	const toggleHbm = () =>
 		setHbmOpened((curr) => {
 			if (!curr) {

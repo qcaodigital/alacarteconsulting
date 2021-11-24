@@ -25,7 +25,7 @@ export default function Contact() {
 				/>
 				<h1 className='font-bold text-4xl'>Contact Us</h1>
 				<h2 className='max-w-prose text-center leading-relaxed font-mon font-medium px-4'>
-					How can our team help you?
+					How can we help you?
 				</h2>
 			</div>
 			<form className='relative z-10 mt-16 px-4 py-8 bg-wine text-buttercream text-sm max-w-5xl mx-auto | md:py-16 | lg:py-24'>

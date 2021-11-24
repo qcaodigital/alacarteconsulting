@@ -34,8 +34,12 @@ export default function About() {
 					<img src='/graphics/team-icon.png' alt='' className='w-28' />
 					<h1 className='font-bold text-4xl'>Meet the Team</h1>
 					<h2 className='max-w-prose text-center leading-relaxed font-mon font-medium px-4'>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-						exercitationem modi laborum voluptates quisqua molestias.
+						A La Carte Restaurant Business Solutions is a comprehensive resource for
+						both startups and existing businesses. Our team holds years of experience in
+						the foodservice industry from front of the house to the back of the house.
+						Whether you’re struggling to reduce food waste, aren’t sure how to improve
+						operating margins, or you just need guidance on how to set up your business
+						for current and future success, we can work with you to find a solution.
 					</h2>
 				</div>
 			</section>
@@ -45,19 +49,19 @@ export default function About() {
 						image='/images/portrait3.png'
 						name='Takeshi Nishikawa'
 						title='Operational Strategy'
-						description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi dolorem similique eos fuga enim, voluptatum, quam exercitationem adipisci odit eius quo repudiandae molestias nostrum unde beatae officiis consequuntur quia. Recusandae iure commodi libero minus eaque omnis quae error optio aut consequuntur soluta, earum, expedita enim? Cum, id reprehenderit, mollitia provident nisi porro blanditiis in a tempore neque ea at quo eius quos animi illo libero aut. Non vitae adipisci excepturi ducimus explicabo labore voluptatem neque.'
+						description='From an early age in Japan, Takeshi found his love for cooking through helping out his grandmother in the family kitchen. After moving to the US, he pursued his culinary career and graduated from the New England Culinary Institute. He’s worked in many high-profile D.C. restaurants including Maestro at Ritz-Carlton Tysons Corner, Restaurant Eve, VOLT, New Heights, PRG Hospitality, and Roses Restaurant Group. When he isn’t in his chef’s coat, you can find him studying foreign languages or biking the local trails.'
 					/>
 					<Profile
 						image='/images/portrait1.png'
 						name='Laura Nishikawa'
 						title='Graphic Design'
-						description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi dolorem similique eos fuga enim, voluptatum, quam exercitationem adipisci odit eius quo repudiandae molestias nostrum unde beatae officiis consequuntur quia. Recusandae iure commodi libero minus eaque omnis quae error optio aut consequuntur soluta, earum, expedita enim? Cum, id reprehenderit, mollitia provident nisi porro blanditiis in a tempore neque ea at quo eius quos animi illo libero aut. Non vitae adipisci excepturi ducimus explicabo labore voluptatem neque.'
+						description='Laura has lent her design and illustrative talents to many industries including retail, publication, and event production. She’s created everything from front-end web graphics, corporate ebooks, video event graphic support, to multiple print collateral. When she’s not designing, you can find her painting or reading.'
 					/>
 					<Profile
 						image='/images/portrait3.png'
 						name='Quan Cao'
 						title='Software Engineering'
-						description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi dolorem similique eos fuga enim, voluptatum, quam exercitationem adipisci odit eius quo repudiandae molestias nostrum unde beatae officiis consequuntur quia. Recusandae iure commodi libero minus eaque omnis quae error optio aut consequuntur soluta, earum, expedita enim? Cum, id reprehenderit, mollitia provident nisi porro blanditiis in a tempore neque ea at quo eius quos animi illo libero aut. Non vitae adipisci excepturi ducimus explicabo labore voluptatem neque.'
+						description='From hospitality management to software development, Quan comes to our team bringing expertise from both worlds. With nearly a decade of experience in managing front of house in restaurants, including working alongside Takeshi at PRG Hospitality, and three years as a developer, he knows the insides and out of what a restaurant needs to succeed and can bring digital business solutions to life. Short of hanging out at home with his wife and golden retriever, you’ll usually find him out dining or fishing the Chesapeake Bay.'
 					/>
 				</ul>
 			</section>

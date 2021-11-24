@@ -17,8 +17,9 @@ export default function Home() {
 						<span className='font-semibold italic'>iscing seda </span>usmod tempor.
 					</h1>
 					<h2 className='font-light tracking-wider max-w-[50ch]'>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae nemo
-						consequatur dolorum tempore! Minima aut, corporis quos ullam maxime.
+						By supporting business owners and operators with innovative solutions, we
+						are empowering them to organize, revitalize, and navigate their businesses
+						in a rapidly changing landscape.
 					</h2>
 					<button className='text-xs uppercase tracking-wide border-black border-2 px-4 py-2 | md:text-base md:px-8 md:py-3'>
 						View Work

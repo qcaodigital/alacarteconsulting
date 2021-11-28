@@ -26,7 +26,7 @@ export default function Footer() {
 	const router = useRouter();
 	const history = router.pathname;
 	const basePath = router.pathname.split('/')[1];
-	const whiteFooter: boolean = ['work', 'contact'].includes(basePath);
+	// const whiteFooter: boolean = ['work', 'contact'].includes(basePath);
 
 	const resetFooterNav = () => {
 		setOpenSubpath(undefined);

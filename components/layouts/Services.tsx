@@ -65,7 +65,7 @@ export default function Services({
 								className={`flex flex-col justify-center bg-white/25 items-center gap-6 shadow-md p-4 rounded-sm transition duration-300 cursor-pointer | hover:shadow-lg ${iconBorderColor} hover:ring-2 ${
 									idx === 3 ? 'col-start-2 col-end-4' : 'col-span-2'
 								}`}
-								onClick={() => setActiveService({ icon, text })}
+								// onClick={() => setActiveService({ icon, text })}
 							>
 								<ReactSVG
 									src={icon}

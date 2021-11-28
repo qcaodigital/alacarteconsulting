@@ -35,12 +35,15 @@ function MyApp({ Component, pageProps }: AppProps) {
 				/>
 				<link rel='manifest' href='/favicons/site.webmanifest' />
 			</Head>
-			<div className='font-nun text-black'>
-				<Nav />
-				<AnimatePresence>
-					<Component {...pageProps} />
-				</AnimatePresence>
-				<Footer />
+			<div className='relative font-nun text-black bg-home-hero bg-cover'>
+				<div className='absolute inset-0 z-0 bg-buttercream/70' />
+				<div className='relative z-50'>
+					<Nav />
+					<AnimatePresence>
+						<Component {...pageProps} />
+					</AnimatePresence>
+					<Footer />
+				</div>
 			</div>
 		</ScreenSizeContext.Provider>
 	);

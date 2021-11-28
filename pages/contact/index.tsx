@@ -9,15 +9,10 @@ export default function Contact() {
 	const { screenSizeIs } = useScreenSizeContext();
 
 	return (
-		<motion.main
-			key='contact'
-			className='relative layout-tall bg-center bg-cover bg-home-hero'
-			{...fadeInOut}
-		>
+		<motion.main key='contact' className='relative layout-tall' {...fadeInOut}>
 			<Head>
 				<title>A La Carte Consulting | Contact</title>
 			</Head>
-			<div className='absolute inset-0 z-0 bg-buttercream/80' />
 			<div className='relative z-10 flex flex-col justify-center items-center gap-4'>
 				<FontAwesomeIcon
 					icon={faEnvelopeOpen}

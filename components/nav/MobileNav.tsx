@@ -1,5 +1,5 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -33,21 +33,21 @@ export default function MobileNav() {
 					colorMode === 'light' ? 'text-white' : ''
 				}`}
 			>
-				<li>
+				{/* <li>
 					<a href='https://instagram.com' target='_blank' rel='noopener noreferrer'>
 						<FontAwesomeIcon icon={faInstagram} size='2x' className='scale-[.80]' />
 					</a>
-				</li>
+				</li> */}
 				<li onClick={hbmOpened ? toggleHbm : undefined}>
 					<Link href='/'>
 						<Image
 							src={`${
 								colorMode === 'light'
-									? '/branding/logo-white.png'
-									: '/branding/logo-light.png'
+									? '/branding/logo-short-white.png'
+									: '/branding/logo-short.png'
 							}`}
-							width={200}
-							height={71}
+							width={110}
+							height={49.5}
 							className='cursor-pointer'
 						/>
 					</Link>

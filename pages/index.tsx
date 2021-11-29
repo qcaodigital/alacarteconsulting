@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 // @ts-ignore
 import { Fade } from 'react-reveal';
+import { Button } from 'components/common/Button';
 
 export default function Home() {
 	return (
@@ -22,9 +23,9 @@ export default function Home() {
 						are empowering them to organize, revitalize, and navigate their businesses
 						in a rapidly changing landscape.
 					</h2>
-					<button className='text-xs uppercase tracking-wide border-black border-2 px-4 py-2 | md:text-base md:px-8 md:py-3'>
-						View Work
-					</button>
+					<Button>
+						<Link href='/work'>View Work</Link>
+					</Button>
 				</header>
 			</section>
 			<section className='layout py-10 flex items-center justify-center bg-brown/90 | md:py-40'>
@@ -63,11 +64,9 @@ export default function Home() {
 							Our plans are 100% customizable so that everyone from startup businesses
 							to minor event planning is able to take advantage of our expertise.
 						</p>
-						<Link href='/about'>
-							<a className='mt-2 text-xs text-white uppercase tracking-wide border-white border-2 px-4 py-2 w-40 | md:text-base md:px-8 md:py-3'>
-								About Us
-							</a>
-						</Link>
+						<Button color='white'>
+							<Link href='/about'>About Us</Link>
+						</Button>
 					</div>
 				</div>
 			</section>

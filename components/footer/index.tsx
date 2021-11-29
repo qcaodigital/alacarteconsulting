@@ -116,7 +116,7 @@ export default function Footer() {
 						<FontAwesomeIcon icon={faLinkedinIn} size='lg' />
 					</div> */}
 					<p className='text-center max-w-[45ch] font-mon text-xs font-medium italic'>
-						A La Carte Consulting© is a Washington, DC-based company dedicated to
+						A La Carte Consulting is a Washington, DC-based company dedicated to
 						providing the hospitality-sector highly customizable business solutions and
 						related services.
 					</p>

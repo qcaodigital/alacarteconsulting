@@ -1,12 +1,26 @@
 import Head from 'next/head';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons';
-import { useScreenSizeContext } from '@/utils/useScreenSizeContext';
-import { fadeInOut } from '@/utils/fadeInOut';
+import { useScreenSizeContext } from 'utils/useScreenSizeContext';
+import { fadeInOut } from 'utils/fadeInOut';
 import { motion } from 'framer-motion';
+import { Button } from 'components/common/Button';
+import { toast } from 'react-toastify';
+import _ from 'lodash';
+import { MouseEvent } from 'react';
 
 export default function Contact() {
 	const { screenSizeIs } = useScreenSizeContext();
+	function submitDisabled(e: MouseEvent) {
+		e.preventDefault();
+		toast.error(
+			'Email server error. Please contact us directly at takeshi@alacarteconsulting.co',
+			{
+				type: toast.TYPE.ERROR,
+				theme: 'light',
+			}
+		);
+	}
 
 	return (
 		<motion.main key='contact' className='relative layout-tall' {...fadeInOut}>
@@ -80,11 +94,24 @@ export default function Contact() {
 							id='details'
 						/>
 					</fieldset>
-					<button className='float-left w-24 border-2 py-1 text-sm uppercase tracking-wider font-semibold'>
+					<Button
+						color='cream'
+						size='sm'
+						className='text-sm uppercase tracking-wider font-semibold self-start'
+						onClick={submitDisabled}
+					>
 						Submit
-					</button>
+					</Button>
 				</div>
 			</form>
+			<section>
+				<p className='text-center italic font-semibold pt-8 text-sm'>
+					If you'd like to reach out to us directly, please email{' '}
+					<a href='mailto:takeshi@alacarteconsulting.co' className='font-bold underline'>
+						takeshi@alacarteconsulting.co
+					</a>
+				</p>
+			</section>
 		</motion.main>
 	);
 }

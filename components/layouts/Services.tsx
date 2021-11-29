@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import _ from 'lodash';
 import Head from 'next/head';
 import { ReactSVG } from 'react-svg';
+import { useScreenSizeContext } from 'utils/useScreenSizeContext';
 
 interface IIconItem {
 	icon: string;
@@ -27,6 +28,8 @@ export default function Services({
 	iconList,
 	iconColor = 'text-black',
 }: ServicesProps) {
+	const { screenSizeIs } = useScreenSizeContext();
+
 	return (
 		<motion.main key={componentKey} {...fadeInOut}>
 			<Head>
@@ -51,14 +54,16 @@ export default function Services({
 					))}
 				</header>
 			</section>
-
-			<section className='py-24 bg-grey'>
-				<ul className='grid grid-cols-6 max-w-4xl mx-auto items-end gap-y-24 gap-x-24'>
+			<section className='py-24 px-8 bg-grey'>
+				<ul className='grid grid-cols-2 px-[15%] max-w-4xl mx-auto items-end gap-y-10 gap-x-10 | sm:grid-cols-4 | md:px-0 md:grid-cols-6 md:gap-y-24 md:gap-x-24'>
 					{iconList.map(({ icon, text }, idx) => (
 						<li
 							key={_.isArray(text) ? text.join(' ') : text}
 							className={`flex flex-col justify-center bg-white/25 items-center gap-6 shadow-md p-4 rounded-sm transition duration-300 | ${
-								idx === 3 ? 'col-start-2 col-end-4' : 'col-span-2'
+								(idx === 4 && screenSizeIs(['xs', 'sm'])) ||
+								(idx === 3 && !screenSizeIs(['xs', 'sm']))
+									? 'col-start-2 col-span-2'
+									: 'col-span-2'
 							}`}
 						>
 							<ReactSVG
@@ -82,3 +87,5 @@ export default function Services({
 		</motion.main>
 	);
 }
+
+// grid grid-cols-6 max-w-4xl mx-auto items-end gap-y-24 gap-x-24

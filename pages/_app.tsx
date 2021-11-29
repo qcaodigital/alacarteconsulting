@@ -1,5 +1,6 @@
 import 'styles/globals.css';
 import 'tailwindcss/tailwind.css';
+import 'react-toastify/dist/ReactToastify.css';
 import { AppProps } from 'next/app';
 import Nav from 'components/nav';
 import { config } from '@fortawesome/fontawesome-svg-core';
@@ -8,6 +9,7 @@ import Footer from '@/components/footer';
 import Head from 'next/head';
 import { useCurrentScreenSize } from 'utils/useCurrentScreenSize';
 import { AnimatePresence } from 'framer-motion';
+import { ToastContainer } from 'react-toastify';
 config.autoAddCss = false;
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -39,6 +41,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 				<div className='absolute inset-0 z-0 bg-buttercream/70' />
 				<div className='relative z-50'>
 					<Nav />
+					<ToastContainer limit={1} />
 					<AnimatePresence>
 						<Component {...pageProps} />
 					</AnimatePresence>

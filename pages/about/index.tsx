@@ -30,7 +30,7 @@ export default function About() {
 			</Head>
 			<section className='relative layout-tall shadow-sm'>
 				<div className='relative z-10 flex flex-col justify-center items-center gap-4'>
-					<img src='/graphics/team-icon.png' alt='' className='w-28' />
+					<img src='/graphics/svg/icon-team.svg' alt='' className='w-28' />
 					<h1 className='font-bold text-4xl'>Meet the Team</h1>
 					<h2 className='max-w-prose text-center leading-relaxed font-mon font-medium px-4'>
 						A La Carte Restaurant Business Solutions is a comprehensive resource for

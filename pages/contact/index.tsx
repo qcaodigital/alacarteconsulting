@@ -106,7 +106,7 @@ export default function Contact() {
 			</form>
 			<section>
 				<p className='text-center italic font-semibold pt-8 text-sm'>
-					If you'd like to reach out to us directly, please email
+					If you&apos;d like to reach out to us directly, please email
 					<a
 						href='mailto:takeshi@alacarteconsulting.co'
 						className='font-bold underline ml-[.4ch]'

@@ -14,7 +14,7 @@ export default function Contact() {
 	function submitDisabled(e: MouseEvent) {
 		e.preventDefault();
 		toast.error(
-			'Email server error. Please contact us directly at takeshi@alacarteconsulting.co',
+			'Email server error. Please contact us directly at info@alacarteconsulting.co',
 			{
 				type: toast.TYPE.ERROR,
 				theme: 'light',
@@ -108,10 +108,10 @@ export default function Contact() {
 				<p className='text-center italic font-semibold pt-8 text-sm'>
 					If you&apos;d like to reach out to us directly, please email
 					<a
-						href='mailto:takeshi@alacarteconsulting.co'
+						href='mailto:info@alacarteconsulting.co'
 						className='font-bold underline ml-[.4ch]'
 					>
-						takeshi@alacarteconsulting.co
+						info@alacarteconsulting.co
 					</a>
 				</p>
 			</section>

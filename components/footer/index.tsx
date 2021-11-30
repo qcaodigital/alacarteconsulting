@@ -38,7 +38,7 @@ export default function Footer() {
 	return (
 		<footer>
 			<div className='relative layout'>
-				{/* {whiteFooter ? <div className='absolute inset-0 bg-white/60' /> : null} */}
+				{/* <div className='absolute inset-0 bg-black/90' /> */}
 				<div className='relative z-10 flex flex-col justify-center items-center gap-4 mx-4'>
 					<Link href='/'>
 						<img

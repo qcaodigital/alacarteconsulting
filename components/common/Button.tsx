@@ -1,6 +1,6 @@
 import { MouseEvent, ReactElement } from 'react';
 
-interface ButtonProps {
+interface ButtonProps extends Partial<Omit<HTMLButtonElement, 'className' | 'children'>> {
 	color?: 'white' | 'black' | 'cream';
 	size?: 'sm' | 'base';
 	children: string | ReactElement;

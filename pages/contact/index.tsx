@@ -7,19 +7,51 @@ import { motion } from 'framer-motion';
 import { Button } from 'components/common/Button';
 import { toast } from 'react-toastify';
 import _ from 'lodash';
-import { MouseEvent } from 'react';
+import { useForm } from 'react-hook-form';
+import emailjs from 'emailjs-com';
 
 export default function Contact() {
 	const { screenSizeIs } = useScreenSizeContext();
-	function submitDisabled(e: MouseEvent) {
-		e.preventDefault();
-		toast.error(
-			'Email server error. Please contact us directly at info@alacarteconsulting.co',
-			{
-				type: toast.TYPE.ERROR,
-				theme: 'light',
-			}
-		);
+	// function submitDisabled(e: MouseEvent) {
+	// 	e.preventDefault();
+	// 	toast.error(
+	// 		'Email server error. Please contact us directly at info@alacarteconsulting.co',
+	// 		{
+	// 			type: toast.TYPE.ERROR,
+	// 			theme: 'light',
+	// 		}
+	// 	);
+	// }
+
+	const { handleSubmit, register, reset } = useForm();
+
+	function onSubmit() {
+		emailjs
+			.sendForm(
+				'service_vfs2rzd',
+				'template_7j3udvq',
+				'#contact-form',
+				'user_8AMvQSEMa75Id2sxpfwAB'
+			)
+			.then(() => {
+				reset();
+				toast.success(
+					'Thanks for reaching out. We will get back to you as soon as possible!',
+					{
+						type: toast.TYPE.SUCCESS,
+						theme: 'light',
+					}
+				);
+			})
+			.catch(() => {
+				toast.error(
+					'Email server error. Please contact us directly at info@alacarteconsulting.co',
+					{
+						type: toast.TYPE.ERROR,
+						theme: 'light',
+					}
+				);
+			});
 	}
 
 	return (
@@ -37,7 +69,11 @@ export default function Contact() {
 					How can we help you?
 				</h2>
 			</div>
-			<form className='relative z-10 mt-16 px-4 py-8 bg-wine text-buttercream text-sm max-w-5xl mx-auto | md:py-16 | lg:py-24'>
+			<form
+				className='relative z-10 mt-16 px-4 py-8 bg-wine text-buttercream text-sm max-w-5xl mx-auto | md:py-16 | lg:py-24'
+				onSubmit={handleSubmit(onSubmit)}
+				id='contact-form'
+			>
 				<div className='flex flex-col gap-4 max-w-2xl mx-auto'>
 					<fieldset className='flex flex-col'>
 						<label
@@ -50,7 +86,7 @@ export default function Contact() {
 							className='bg-wine_light border-none py-2 text-sm | focus:ring-yellow'
 							type='text'
 							id='name'
-							name='name'
+							{...register('name')}
 						/>
 					</fieldset>
 					<fieldset className='flex flex-col'>
@@ -64,7 +100,7 @@ export default function Contact() {
 							className='bg-wine_light border-none py-2 text-sm | focus:ring-yellow'
 							type='email'
 							id='email'
-							name='email'
+							{...register('email')}
 						/>
 					</fieldset>
 					<fieldset className='flex flex-col'>
@@ -78,27 +114,27 @@ export default function Contact() {
 							className='bg-wine_light border-none py-2 text-sm | focus:ring-yellow'
 							type='text'
 							id='phone'
-							name='phone'
+							{...register('phone')}
 						/>
 					</fieldset>
 					<fieldset className='flex flex-col'>
 						<label
 							className='uppercase mb-1 text-sm tracking-wide font-nun font-bold'
-							htmlFor='details'
+							htmlFor='message'
 						>
 							Give Us A Few Details About Your Project
 						</label>
 						<textarea
 							className='bg-wine_light border-none py-2 resize-none h-60 text-sm | focus:ring-yellow'
-							name='details'
-							id='details'
+							id='message'
+							{...register('message')}
 						/>
 					</fieldset>
 					<Button
 						color='cream'
 						size='sm'
 						className='text-sm uppercase tracking-wider font-semibold self-start'
-						onClick={submitDisabled}
+						type='submit'
 					>
 						Submit
 					</Button>

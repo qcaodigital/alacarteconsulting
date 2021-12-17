@@ -2,7 +2,7 @@ import { ReactSVG } from 'react-svg';
 
 export default function Work() {
 	return (
-		<main className='layout-tall'>
+		<main className='layout-tall !pb-20'>
 			<div className='flex flex-col gap-4 place-items-center'>
 				<ReactSVG
 					src='/graphics/svg/icon-coming-soon.svg'

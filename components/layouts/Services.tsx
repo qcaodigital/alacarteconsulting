@@ -7,7 +7,8 @@ import { useScreenSizeContext } from 'utils/useScreenSizeContext';
 
 interface IIconItem {
 	icon: string;
-	text: string | string[];
+	headerText: string | string[];
+	bodyText?: string;
 }
 
 interface ServicesProps {
@@ -16,7 +17,7 @@ interface ServicesProps {
 	header: string;
 	subheaders: string[];
 	iconList: IIconItem[];
-	iconColor?: string;
+	accentColor?: string;
 	iconBorderColor?: string;
 }
 
@@ -26,7 +27,7 @@ export default function Services({
 	header,
 	subheaders,
 	iconList,
-	iconColor = 'text-black',
+	accentColor = 'text-black',
 }: ServicesProps) {
 	const { screenSizeIs } = useScreenSizeContext();
 
@@ -44,42 +45,45 @@ export default function Services({
 					<h1 className='font-nun font-extrabold tracking-wider text-2xl leading-normal capitalize text-white | sm:text-3xl | md:max-w-[20ch]'>
 						{header}
 					</h1>
-					{subheaders.map((subheader) => (
+					{/* {subheaders.map((subheader) => (
 						<p
 							key={subheader}
 							className='font-light capitalize tracking-wider max-w-[50ch]'
 						>
 							{subheader}
 						</p>
-					))}
+					))} */}
 				</header>
 			</section>
-			<section className='py-24 px-8 bg-grey'>
-				<ul className='grid grid-cols-2 px-[15%] max-w-4xl mx-auto items-end gap-y-10 gap-x-10 | sm:grid-cols-4 | md:px-0 md:grid-cols-6 md:gap-y-24 md:gap-x-24'>
-					{iconList.map(({ icon, text }, idx) => (
+			<section className='py-24 px-12 bg-grey'>
+				<ul className='grid grid-cols-2 items-start gap-y-16 text-center | md:grid-cols-4 md:gap-x-10 | lg:px-[10%] lg:grid-cols-6 lg:gap-20'>
+					{iconList.map(({ icon, headerText, bodyText }, idx) => (
 						<li
-							key={_.isArray(text) ? text.join(' ') : text}
-							className={`flex flex-col justify-center bg-white/25 items-center gap-6 shadow-md p-4 rounded-sm transition duration-300 | ${
-								(idx === 4 && screenSizeIs(['xs', 'sm'])) ||
-								(idx === 3 && !screenSizeIs(['xs', 'sm']))
+							key={_.isArray(headerText) ? headerText.join(' ') : headerText}
+							className={`grid gap-y-4 ${
+								(idx === 4 && screenSizeIs(['xs', 'sm', 'md'])) ||
+								(idx === 3 && !screenSizeIs(['xs', 'sm', 'md']))
 									? 'col-start-2 col-span-2'
 									: 'col-span-2'
-							}`}
+							} ${idx === 4 && screenSizeIs(['xs']) ? 'col-start-1 col-span-2' : ''}`}
 						>
 							<ReactSVG
 								src={icon}
 								id='services-svg'
-								className={`${iconColor} fill-current`}
+								className={`text-black fill-current opacity-90 mx-auto`}
 							/>
-							<p className='font-mon font-medium text-sm tracking-wide uppercase text-center max-w-[30ch]'>
-								{_.isArray(text)
-									? text.map((t) => (
-											<p key={t} className='whitespace-nowrap'>
-												{t}
-											</p>
+							<p
+								className={`font-mon font-medium text-sm mx-auto tracking-wide uppercase text-center max-w-[30ch] text-cayenne`}
+							>
+								{_.isArray(headerText)
+									? headerText.map((text) => (
+											<span key={text} className='block whitespace-nowrap'>
+												{text}
+											</span>
 									  ))
-									: text}
+									: headerText}
 							</p>
+							<p className='mx-auto max-w-[415px]'>{bodyText}</p>
 						</li>
 					))}
 				</ul>
@@ -87,5 +91,3 @@ export default function Services({
 		</motion.main>
 	);
 }
-
-// grid grid-cols-6 max-w-4xl mx-auto items-end gap-y-24 gap-x-24

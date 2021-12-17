@@ -55,7 +55,7 @@ export default function Contact() {
 	}
 
 	return (
-		<motion.main key='contact' className='relative layout-tall' {...fadeInOut}>
+		<motion.main key='contact' className='relative layout-tall !pb-24' {...fadeInOut}>
 			<Head>
 				<title>A La Carte Consulting | Contact</title>
 			</Head>

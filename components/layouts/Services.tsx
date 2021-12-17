@@ -25,10 +25,10 @@ export default function Services({
 	componentKey,
 	backgroundImage,
 	header,
-	subheaders,
+	// subheaders,
 	iconList,
-	accentColor = 'text-black',
-}: ServicesProps) {
+}: // accentColor = 'text-black',
+ServicesProps) {
 	const { screenSizeIs } = useScreenSizeContext();
 
 	return (

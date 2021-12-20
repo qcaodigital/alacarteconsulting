@@ -35,7 +35,7 @@ export default function Marketing() {
 					icon: '/graphics/svg/icon-seo.svg',
 					headerText: ['Search Engine', 'Optimization'],
 					bodyText:
-						"An impressive website isn't worth anything when there are millions of other websites that exist on the internet. Many businesses fail to pay mind to how they're discovered by potential customers browsing the web. Let us assist driving customers to your business by making sure you show up first in line in a Google search.",
+						"An impressive website isn't worth anything when there are millions of other websites that exist on the internet. Many businesses fail to pay mind to how they're discovered by potential customers browsing the web. Drive future customers to your business by making sure you show up first in line in a Google search.",
 				},
 				{
 					icon: '/graphics/svg/icon-photo-and-video.svg',

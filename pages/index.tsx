@@ -16,6 +16,7 @@ export default function Home() {
 					Build your hospitality business from the ground up with A La Carte Consulting
 					the way you want, and how you want it.'
 				/>
+				<html lang='en' />
 			</Head>
 			<section className='relative layout-tall'>
 				<header className='relative z-10 flex flex-col gap-8 justify-center items-center px-[10%] text-center'>
@@ -45,7 +46,7 @@ export default function Home() {
 							<img
 								className='absolute-center left-[40%] top-[60%] z-20 | sm:left-1/3 | md:scale-75 | lg:scale-[85%] lg:left-[10%] lg:top-2/3'
 								src='/images/home-copy-shape.png'
-								alt=''
+								alt='A La Carte Consulting Logo Minimzed'
 							/>
 							<img
 								className='absolute right-0 top-[65%] z-10 h-52 w-52 object-cover object-center | lg:h-72 lg:w-72'

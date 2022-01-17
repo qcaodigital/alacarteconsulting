@@ -49,6 +49,7 @@ export default function MobileNav() {
 							width={110}
 							height={49.5}
 							className='cursor-pointer'
+							alt='A La Carte Consulting Logo'
 						/>
 					</Link>
 				</li>

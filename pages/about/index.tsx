@@ -12,7 +12,7 @@ interface ProfileProps {
 function Profile({ image, title, name, description }: ProfileProps) {
 	return (
 		<li className='flex flex-col gap-8 w-full | md:w-72'>
-			<img className='w-full object-cover | md:h-96 md:w-72' src={image} alt='' />
+			<img className='w-full object-cover | md:h-96 md:w-72' src={image} alt={name} />
 			<div className='flex flex-col gap-2'>
 				<p className='uppercase font-medium'>{title}</p>
 				<p className='font-bold tracking-wider uppercase text-xl'>{name}</p>
@@ -30,7 +30,11 @@ export default function About() {
 			</Head>
 			<section className='relative layout-tall shadow-sm'>
 				<div className='relative z-10 flex flex-col justify-center items-center gap-4'>
-					<img src='/graphics/svg/icon-team.svg' alt='' className='w-28' />
+					<img
+						src='/graphics/svg/icon-team.svg'
+						alt='icon of two peoeple standing next to each other'
+						className='w-28'
+					/>
 					<h1 className='font-bold text-4xl'>Meet the Team</h1>
 					<h2 className='max-w-prose text-center leading-relaxed font-mon font-medium px-4'>
 						A La Carte Restaurant Business Solutions is a comprehensive resource for

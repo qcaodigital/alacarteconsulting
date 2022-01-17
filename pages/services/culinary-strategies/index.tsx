@@ -17,7 +17,7 @@ export default function CulinaryStrategies() {
 					icon: '/graphics/svg/icon-menu-development.svg',
 					headerText: ['Menu', 'Development'],
 					bodyText:
-						'Menus are the core of every food and beverage operation. Well constructed menu is balanced, exciting, and seasonal. From pricing to logistics to execution, There is so much to consider when engineering a well-thought out menu. Even seasoned chefs need someone who he/she can rely on to bounce ideas off during every menu change.',
+						'Menus are the core of every food and beverage operation. Well constructed menu is balanced, exciting, and seasonal. From pricing to logistics, there is so much to consider when engineering a well-thought out menu. Even seasoned chefs need someone who he/she can rely on to bounce ideas off during every menu change.',
 				},
 				{
 					icon: '/graphics/svg/icon-waste-management.svg',
@@ -29,7 +29,7 @@ export default function CulinaryStrategies() {
 					icon: '/graphics/svg/icon-food-cost-managing.svg',
 					headerText: ['Food Cost', 'Management'],
 					bodyText:
-						'Well written recipes are the foundation of any successful culinary operations. Collection of amazing recipes is what creates memorable dishes and meals. Downloading recipes from celebrity chefs are just not going to cut it anymore. They should be tailored to every business with intent. There are restaurants generating millions of dollars with few incredible, well-kept recipes and honestly, everyone knows it.',
+						"Well written recipes are the foundation of any successful culinary operation and an amazing collection of recipes is what creates memorable dishes and meals. Downloading recipes from celebrity chefs won't cut it anymore- they should be tailored to every business with intent. Let us develop your restaurant's personal recipe book.",
 				},
 				{
 					icon: '/graphics/svg/icon-plate-menu-cost.svg',
@@ -41,7 +41,7 @@ export default function CulinaryStrategies() {
 					icon: '/graphics/svg/icon-purchasing-and-ordering-guide.svg',
 					headerText: ['Purchasing &', 'Ordering Guide'],
 					bodyText:
-						'Not all ingredients are made equal. Never mind getting what is cheaper and more expensive. Now, there are so many different product options: varieties, places of origin, producer, organic, etc. From A5 wagyu to a jug of fryer oil, there is nothing we can’t source for any business types. Creating a precise order list and pars with revenue projection will help you allocate your capitals more efficiently.',
+						'Not all ingredients are made equal and everything is only getting more costly. Now, there are so many different product options: varieties, places of origin, producer, organic, etc. From A5 wagyu to a jug of fryer oil, there is nothing we can’t source for any business type. Creating a precise order list and pars with revenue projection will help you allocate your capital more efficiently.',
 				},
 			]}
 			otherCategories={[

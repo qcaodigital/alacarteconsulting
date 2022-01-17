@@ -24,7 +24,7 @@ export default function Home() {
 						Strategies & solutions
 						<span className='font-semibold italic'> made to order.</span>
 					</h1>
-					<h2 className='font-light tracking-wider max-w-[50ch]'>
+					<h2 className='font-light tracking-wider max-w-[55ch]'>
 						By supporting business owners and operators with innovative solutions, we
 						are empowering them to organize, revitalize, and navigate their businesses
 						in a rapidly changing landscape.

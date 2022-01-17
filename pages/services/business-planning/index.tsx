@@ -29,7 +29,7 @@ export default function BusinessPlanning() {
 					icon: '/graphics/svg/icon-labor-costing.svg',
 					headerText: ['Labor Costing,', 'Projection, & Analysis'],
 					bodyText:
-						'Recently, managing labor costs has become one of the biggest challenges of the hospitality sector. As wages rise, operators must be able to project, schedule, and analyze labor appropriately. Profits heavily depend on labor management as labor cost is one of the largest investments.',
+						'Managing labor costs has become one of the biggest challenges of the hospitality sector. As wages rise, operators must be able to project, schedule, and adjust labor appropriately. Profits heavily depend on labor management as labor cost is one of the largest investments you can make as the owner of a business.',
 				},
 				{
 					icon: '/graphics/svg/icon-catering-proposals.svg',

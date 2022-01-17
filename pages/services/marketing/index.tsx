@@ -23,7 +23,7 @@ export default function Marketing() {
 					icon: '/graphics/svg/icon-menu-design.svg',
 					headerText: ['Print & Digital', 'Menu Design'],
 					bodyText:
-						'We know that creating a menu that is well-designed and thoughtfully laid out is crucial to your customer’s experience at your restaurant. We can help you create a menu that will be organized, brand coordinated, and eye-catching, whether it be on a single sheet or a fold-out. Well-crafted menus can help to boost sales and drive business! Any other print pieces needed such as coupons or table sign promotions? We can help to create those as well.',
+						'We know that creating a menu that is well-designed and thoughtfully laid out is crucial to your customer’s experience at your restaurant. We can help you create a menu that will be organized, brand coordinated, and eye-catching, whether it be on a single sheet or a fold-out. Well-crafted menus, coupons, table signs, and more can help to boost sales and drive business!',
 				},
 				{
 					icon: '/graphics/svg/icon-interactive-web-design.svg',

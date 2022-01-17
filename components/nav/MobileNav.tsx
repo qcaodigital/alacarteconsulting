@@ -29,7 +29,7 @@ export default function MobileNav() {
 	return (
 		<>
 			<ul
-				className={`flex justify-between items-center w-[100vw] px-4 gap-4 relative z-40 ${
+				className={`flex justify-between items-center w-screen px-4 gap-4 relative z-40 ${
 					colorMode === 'light' ? 'text-white' : ''
 				}`}
 			>

@@ -96,7 +96,7 @@ ServicesProps) {
 					Additional Service Categories:{' '}
 					<span className='font-medium text-black'>
 						{otherCategories.map((category, idx, arr) => (
-							<span>
+							<span key={category.text}>
 								<span className='underline'>
 									<Link href={category.link}>{category.text}</Link>
 								</span>

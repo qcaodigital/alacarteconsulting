@@ -36,9 +36,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 					href='/favicons/favicon-16x16.png'
 				/>
 				<link rel='manifest' href='/favicons/site.webmanifest' />
-				<meta http-equiv='cache-control' content='no-cache' />
-				<meta http-equiv='expires' content='0' />
-				<meta http-equiv='pragma' content='no-cache'></meta>
+				<meta httpEquiv='cache-control' content='no-cache' />
+				<meta httpEquiv='expires' content='0' />
+				<meta httpEquiv='pragma' content='no-cache'></meta>
 			</Head>
 			<div className='relative font-nun text-black bg-home-hero bg-cover'>
 				<div className='absolute inset-0 z-0 bg-buttercream/70' />

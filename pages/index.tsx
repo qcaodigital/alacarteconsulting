@@ -2,8 +2,7 @@ import { fadeInOut } from 'utils/fadeInOut';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
 import Link from 'next/link';
-// @ts-ignore
-import { Fade } from 'react-reveal';
+import { Fade } from 'react-awesome-reveal';
 import { Button } from 'components/common/Button';
 
 export default function Home() {
@@ -11,6 +10,12 @@ export default function Home() {
 		<motion.main key='home' {...fadeInOut}>
 			<Head>
 				<title>A La Carte Consulting</title>
+				<meta
+					name='description'
+					content='
+					Build your hospitality business from the ground up with A La Carte Consulting
+					the way you want, and how you want it.'
+				/>
 			</Head>
 			<section className='relative layout-tall'>
 				<header className='relative z-10 flex flex-col gap-8 justify-center items-center px-[10%] text-center'>
@@ -24,14 +29,14 @@ export default function Home() {
 						in a rapidly changing landscape.
 					</h2>
 					<Button>
-						<Link href='/work'>View Work</Link>
+						<Link href='/services/business-planning'>Our Services</Link>
 					</Button>
 				</header>
 			</section>
 			<section className='layout py-10 flex items-center justify-center bg-brown/90 | md:py-40'>
 				<div className='grid grid-rows-2 gap-8 | md:grid-rows-1 md:grid-cols-2 md:gap-[5vw] | lg:gap-24'>
-					<Fade duration={2500} cascade>
-						<div className='relative scale-75 | md:scale-[unset] md:top-[-10%] lg:top-[-16%]'>
+					<div className='relative scale-75 | md:scale-[unset] md:top-[-10%] lg:top-[-16%]'>
+						<Fade duration={2500} cascade damping={0.1} fraction={1} triggerOnce>
 							<img
 								className='absolute top-[10%] right-[7.5%] z-30 h-80 w-80 object-cover object-center | lg:right-[10%] lg:h-96 lg:w-96'
 								src='/images/home-copy-one.jpeg'
@@ -47,26 +52,29 @@ export default function Home() {
 								src='/images/home-copy-two.jpeg'
 								alt='Bistro food laid out in take out containers'
 							/>
-						</div>
-					</Fade>
-					<div className='flex flex-col justify-center items-center gap-6 text-center | md:text-left md:items-start'>
-						<h3 className='text-buttercream text-2xl max-w-[17ch] uppercase font-mon font-medium leading-tight'>
-							Our Mission
-						</h3>
-						<p className='text-white leading-relaxed max-w-[40ch]'>
-							Our mission is to provide the hospitality sector with comprehensive
-							business strategies that work to improve operations, increase
-							profitability, and define an efficient path to success.
-						</p>
-						<p className='text-white leading-relaxed max-w-[40ch]'>
-							As in the namesake of our business, we adapt to what you need so you’ll
-							never pay for service that won’t significantly impact your operation.
-							Our plans are 100% customizable so that everyone from startup businesses
-							to minor event planning is able to take advantage of our expertise.
-						</p>
-						<Button color='white'>
-							<Link href='/about'>About Us</Link>
-						</Button>
+						</Fade>
+					</div>
+					<div className='flex flex-col justify-center items-center gap-6 py-8 text-center | md:text-left md:items-start'>
+						<Fade cascade duration={1500} damping={0.1}>
+							<p className='text-white leading-relaxed max-w-[40ch]'>
+								<h3 className='inline underline text-buttercream text-2xl max-w-[17ch] uppercase font-mon font-medium leading-tight mr-[.5ch]'>
+									Our Mission
+								</h3>
+								is to provide the hospitality sector with comprehensive business
+								strategies that work to improve operations, increase profitability,
+								and define an efficient path to success.
+							</p>
+							<p className='text-white leading-relaxed max-w-[40ch]'>
+								As in the namesake of our business, we adapt to what you need so
+								you’ll never pay for service that won’t significantly impact your
+								operation. Our plans are 100% customizable so that everyone from
+								startup businesses to minor event planning is able to take advantage
+								of our expertise.
+							</p>
+							<Button color='white'>
+								<Link href='/about'>About Us</Link>
+							</Button>
+						</Fade>
 					</div>
 				</div>
 			</section>

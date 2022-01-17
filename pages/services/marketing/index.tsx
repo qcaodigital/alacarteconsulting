@@ -44,6 +44,10 @@ export default function Marketing() {
 						'A photo can be worth a thousand words they say, and that remains true when it comes to a successful business. Drop the iPhone and let high quality photos create a sense of trust with your customers and make that first impression that makes people want to be a patron with your business.',
 				},
 			]}
+			otherCategories={[
+				{ text: 'Business Planning', link: '/services/business-planning' },
+				{ text: 'Culinary Strategies', link: '/services/culinary-strategies' },
+			]}
 		/>
 	);
 }

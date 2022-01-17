@@ -4,6 +4,7 @@ import _ from 'lodash';
 import Head from 'next/head';
 import { ReactSVG } from 'react-svg';
 import { useScreenSizeContext } from 'utils/useScreenSizeContext';
+import Link from 'next/link';
 
 interface IIconItem {
 	icon: string;
@@ -19,6 +20,7 @@ interface ServicesProps {
 	iconList: IIconItem[];
 	accentColor?: string;
 	iconBorderColor?: string;
+	otherCategories: { text: string; link: string }[];
 }
 
 export default function Services({
@@ -27,6 +29,7 @@ export default function Services({
 	header,
 	// subheaders,
 	iconList,
+	otherCategories,
 }: // accentColor = 'text-black',
 ServicesProps) {
 	const { screenSizeIs } = useScreenSizeContext();
@@ -87,6 +90,21 @@ ServicesProps) {
 						</li>
 					))}
 				</ul>
+			</section>
+			<section className='bg-grey text-center'>
+				<p className='font-semibold py-4 text-cayenne'>
+					Additional Service Categories:{' '}
+					<span className='font-medium text-black'>
+						{otherCategories.map((category, idx, arr) => (
+							<span>
+								<span className='underline'>
+									<Link href={category.link}>{category.text}</Link>
+								</span>
+								{idx === arr.length - 1 ? '' : ', '}
+							</span>
+						))}
+					</span>
+				</p>
 			</section>
 		</motion.main>
 	);

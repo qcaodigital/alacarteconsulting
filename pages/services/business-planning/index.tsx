@@ -44,6 +44,10 @@ export default function BusinessPlanning() {
 						'Keeping track of inventory quantities and cost is an incredibly important aspect of running a profitable business. Owners and operators must know where they are at all times. Without accurate inventory management, there is no way of knowing what is true food and beverage costs are.',
 				},
 			]}
+			otherCategories={[
+				{ text: 'Culinary Strategies', link: '/services/culinary-strategies' },
+				{ text: 'Marketing', link: '/services/marketing' },
+			]}
 		/>
 	);
 }

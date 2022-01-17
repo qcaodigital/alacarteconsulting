@@ -44,6 +44,10 @@ export default function CulinaryStrategies() {
 						'Not all ingredients are made equal. Never mind getting what is cheaper and more expensive. Now, there are so many different product options: varieties, places of origin, producer, organic, etc. From A5 wagyu to a jug of fryer oil, there is nothing we can’t source for any business types. Creating a precise order list and pars with revenue projection will help you allocate your capitals more efficiently.',
 				},
 			]}
+			otherCategories={[
+				{ text: 'Business Planning', link: '/services/business-planning' },
+				{ text: 'Marketing', link: '/services/marketing' },
+			]}
 		/>
 	);
 }

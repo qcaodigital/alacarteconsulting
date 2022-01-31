@@ -39,18 +39,21 @@ export default function MobileNav() {
 					</a>
 				</li> */}
 				<li onClick={hbmOpened ? toggleHbm : undefined}>
-					<Link href='/'>
-						<Image
-							src={`${
-								colorMode === 'light'
-									? '/branding/logo-short-white.png'
-									: '/branding/logo-short.png'
-							}`}
-							width={110}
-							height={49.5}
-							className='cursor-pointer'
-							alt='A La Carte Consulting Logo'
-						/>
+					<Link href='/' passHref>
+						<div>
+							<Image
+								loading='eager'
+								src={`${
+									colorMode === 'light'
+										? '/branding/logo-short-white.png'
+										: '/branding/logo-short.png'
+								}`}
+								width={110}
+								height={49.5}
+								className='cursor-pointer'
+								alt='A La Carte Consulting Logo'
+							/>
+						</div>
 					</Link>
 				</li>
 				<li className='pointer-cursor'>

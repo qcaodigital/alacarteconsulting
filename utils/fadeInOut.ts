@@ -8,4 +8,7 @@ export const fadeInOut = {
 	exit: {
 		opacity: 0.25,
 	},
+	transition: {
+		duration: 0.75,
+	},
 };

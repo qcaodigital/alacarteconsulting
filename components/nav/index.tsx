@@ -5,6 +5,7 @@ import _ from 'lodash';
 import { useRouter } from 'next/router';
 import LinkWithSubpath from './LinkWithSubpath';
 import MobileNav from './MobileNav';
+import { motion } from 'framer-motion';
 
 export default function Nav() {
 	const { screenSizeNot } = useScreenSizeContext();
@@ -12,7 +13,12 @@ export default function Nav() {
 	const baseRoute = router.pathname.split('/')[1];
 
 	return (
-		<nav className='absolute pt-4 left-1/2 -translate-x-1/2 tracking-wider z-50'>
+		<motion.nav
+			className='absolute pt-4 left-1/2 -translate-x-1/2 tracking-wider z-50'
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			transition={{ duration: 1, delay: 0.75 }}
+		>
 			{screenSizeNot(['xs', 'sm']) ? (
 				<ul className='flex items-center justify-center gap-12 uppercase'>
 					{sitemap.map((n) => (
@@ -46,6 +52,6 @@ export default function Nav() {
 					<MobileNav />
 				</div>
 			)}
-		</nav>
+		</motion.nav>
 	);
 }

@@ -40,7 +40,9 @@ export default function LinkWithSubpath({
 								key={sub.label}
 								className='whitespace-nowrap text-center transition duration-200 | hover:opacity-50'
 							>
-								<Link href={path + sub.href}>{sub.label}</Link>
+								<Link href={path + sub.href} passHref>
+									{sub.label}
+								</Link>
 							</li>
 						))}
 					</motion.ul>

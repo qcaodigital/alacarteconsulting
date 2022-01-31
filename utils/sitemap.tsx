@@ -30,20 +30,25 @@ export const sitemap: INavItem[] = [
 	{
 		href: '/',
 		label: (
-			<Image
-				src='/branding/logo-light.png'
-				alt='A La Carte Consulting Logo'
-				width={250}
-				height={88.75}
-			/>
+			<div style={{ width: '250px', height: '88.75px', position: 'relative' }}>
+				<Image
+					quality={65}
+					src='/branding/logo-light.png'
+					alt='A La Carte Consulting Logo'
+					layout='fill'
+					objectFit='contain'
+				/>
+			</div>
 		),
 		darkModeLabel: (
-			<Image
-				src='/branding/logo-white.png'
-				alt='A La Carte Consulting Logo'
-				width={250}
-				height={88.75}
-			/>
+			<div style={{ width: '250px', height: '88.75px', position: 'relative' }}>
+				<Image
+					src='/branding/logo-white.png'
+					alt='A La Carte Consulting Logo'
+					layout='fill'
+					objectFit='contain'
+				/>
+			</div>
 		),
 	},
 	{

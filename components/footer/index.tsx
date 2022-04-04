@@ -25,8 +25,7 @@ export default function Footer() {
 	const [openSubpath, setOpenSubpath] = useState<ISubpathItem[] | undefined>();
 	const router = useRouter();
 	const history = router.pathname;
-	// const basePath = router.pathname.split('/')[1];
-	// const whiteFooter: boolean = ['work', 'contact'].includes(basePath);
+	const basePath = router.pathname.split('/')[1];
 
 	const resetFooterNav = () => {
 		setOpenSubpath(undefined);
@@ -36,9 +35,8 @@ export default function Footer() {
 	useEffect(resetFooterNav, [history]);
 
 	return (
-		<footer>
+		<footer className={`${basePath === 'about' ? 'bg-orange' : 'bg-white'}`}>
 			<div className='relative layout'>
-				{/* <div className='absolute inset-0 bg-black/90' /> */}
 				<div className='relative z-10 flex flex-col justify-center items-center gap-4 mx-4'>
 					<Link href='/'>
 						<img
@@ -112,9 +110,6 @@ export default function Footer() {
 							)}
 						</AnimatePresence>
 					</div>
-					{/* <div className='border-2 border-black rounded-full p-6 w-6 h-6 flex items-center justify-center mt-2'>
-						<FontAwesomeIcon icon={faLinkedinIn} size='lg' />
-					</div> */}
 					<p className='text-center max-w-[45ch] font-mon text-xs font-medium italic'>
 						A La Carte Consulting is a Washington, DC-based company dedicated to
 						providing the hospitality-sector highly customizable business solutions and

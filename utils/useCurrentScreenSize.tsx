@@ -3,13 +3,14 @@ import { Context, createContext, useEffect, useState } from 'react';
 import resolveConfig from 'tailwindcss/resolveConfig';
 import tailwindConfig from 'tailwind.config';
 
-type ScreenSizes = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+type ScreenSizes = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 
 export interface IUseCurrentScreenSizeData {
 	currentScreenSize: ScreenSizes;
 	screens: Record<ScreenSizes, string>;
-	screenSizeNot: (arr: string[]) => boolean;
-	screenSizeIs: (arr: string[]) => boolean;
+	screenSizeNot: (arr: ScreenSizes[]) => boolean;
+	screenSizeIs: (arr: ScreenSizes[]) => boolean;
+	screenSizeIsOrGreaterThan: (size: ScreenSizes) => boolean;
 }
 
 export interface IUseCurrentScreenSize {
@@ -35,9 +36,10 @@ export const useCurrentScreenSize = (): IUseCurrentScreenSize => {
 				.sort((a, b) => (a.maxWidth > b.maxWidth ? 1 : -1));
 			let current: ScreenSizes = 'xs';
 			let count: number = 0;
+
 			while (
-				count < screenSizesToArray.length - 1 &&
-				window.innerWidth > screenSizesToArray[count].maxWidth
+				count < screenSizesToArray.length &&
+				window.innerWidth >= screenSizesToArray[count].maxWidth
 			) {
 				current = screenSizesToArray[count].size as ScreenSizes;
 				count++;
@@ -58,11 +60,18 @@ export const useCurrentScreenSize = (): IUseCurrentScreenSize => {
 		value: {
 			currentScreenSize,
 			screens,
-			screenSizeNot: (sizes: string[]): boolean => {
+			screenSizeNot: (sizes: ScreenSizes[]): boolean => {
 				return !sizes.includes(currentScreenSize);
 			},
-			screenSizeIs: (sizes: string[]): boolean => {
+			screenSizeIs: (sizes: ScreenSizes[]): boolean => {
 				return sizes.includes(currentScreenSize);
+			},
+			screenSizeIsOrGreaterThan: (target: ScreenSizes): boolean => {
+				const sortedSizes: ScreenSizes[] = ['sm', 'md', 'lg', 'xl', '2xl'];
+				const indexOfCurrent = sortedSizes.indexOf(currentScreenSize);
+				const indexOfTarget = sortedSizes.indexOf(target);
+
+				return indexOfTarget <= indexOfCurrent;
 			},
 		},
 	};

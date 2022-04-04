@@ -55,19 +55,18 @@ export default function Contact() {
 	}
 
 	return (
-		<motion.main key='contact' className='relative layout-tall !pb-24' {...fadeInOut}>
+		<motion.main
+			key='contact'
+			className='relative layout-tall !pb-24 bg-darkblue'
+			{...fadeInOut}
+		>
 			<Head>
 				<title>A La Carte Consulting | Contact</title>
 			</Head>
 			<div className='relative z-10 flex flex-col justify-center items-center gap-4'>
-				<FontAwesomeIcon
-					icon={faEnvelopeOpen}
-					size={screenSizeIs(['xs', 'sm', 'md']) ? '2x' : '3x'}
-				/>
-				<h1 className='font-bold text-4xl'>Contact Us</h1>
-				<h2 className='max-w-prose text-center leading-relaxed font-mon font-medium px-4'>
-					How can we help you?
-				</h2>
+				<header>
+					<h1></h1>
+				</header>
 			</div>
 			<form
 				className='relative z-10 mt-16 px-4 py-8 bg-wine text-buttercream text-sm max-w-5xl mx-auto | md:py-16 | lg:py-24'

@@ -12,10 +12,20 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { ToastContainer } from 'react-toastify';
 import { fadeInOut } from '@/utils/fadeInOut';
 import { ParallaxProvider } from 'react-scroll-parallax';
+import { useEffect, useState } from 'react';
+import { NavMenu } from 'components/nav/menu';
+import router, { useRouter } from 'next/router';
 config.autoAddCss = false;
 
 function MyApp({ Component, pageProps }: AppProps) {
 	const { ScreenSizeContext, screenSizeData } = useCurrentScreenSize();
+	const { route } = useRouter();
+	const [isNavMenuOpen, setIsNavMenuOpen] = useState<boolean>(false);
+
+	useEffect(() => {
+		setIsNavMenuOpen(false);
+	}, [route]);
+
 	return (
 		<ParallaxProvider>
 			<ScreenSizeContext.Provider {...screenSizeData}>
@@ -39,19 +49,17 @@ function MyApp({ Component, pageProps }: AppProps) {
 					/>
 					<link rel='manifest' href='/favicons/site.webmanifest' />
 				</Head>
-				<motion.div
-					className='relative font-nun text-black bg-home-hero bg-cover'
-					{...fadeInOut}
-				>
-					<div className='absolute inset-0 z-0 bg-buttercream/70' />
-					<div className='relative z-50'>
-						<Nav />
-						<ToastContainer limit={1} />
-						<AnimatePresence>
-							<Component {...pageProps} />
-						</AnimatePresence>
-						<Footer />
-					</div>
+				<motion.div className='font-nun text-black overflow-x-hidden' {...fadeInOut}>
+					<Nav
+						toggleNavMenu={() => setIsNavMenuOpen((curr) => !curr)}
+						isNavMenuOpen={isNavMenuOpen}
+					/>
+					<AnimatePresence>{isNavMenuOpen && <NavMenu />}</AnimatePresence>
+					<ToastContainer limit={1} />
+					<AnimatePresence>
+						<Component {...pageProps} />
+					</AnimatePresence>
+					<Footer />
 				</motion.div>
 			</ScreenSizeContext.Provider>
 		</ParallaxProvider>

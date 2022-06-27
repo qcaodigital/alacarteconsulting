@@ -34,15 +34,35 @@ export default function Footer() {
 
 	useEffect(resetFooterNav, [history]);
 
+	const containerClasses = (() => {
+		switch (basePath) {
+			case 'about':
+				return 'bg-orange text-black';
+			case 'contact':
+				return 'bg-darkblue text-white';
+			default:
+				return 'bg-white';
+		}
+	})();
+
+	const logoClasses = (() => {
+		switch (basePath) {
+			case 'contact':
+				return '';
+			default:
+				return 'filter grayscale brightness-0 ';
+		}
+	})();
+
 	return (
-		<footer className={`${basePath === 'about' ? 'bg-orange' : 'bg-white'}`}>
+		<footer className={containerClasses}>
 			<div className='relative layout'>
 				<div className='relative z-10 flex flex-col justify-center items-center gap-4 mx-4'>
 					<Link href='/'>
 						<img
-							src='/branding/logo-light.png'
+							src='/assets/branding/full-logo-white.png'
 							alt='A La Carte Consulting Logo'
-							className='filter grayscale brightness-0 w-60 cursor-pointer'
+							className={`w-60 cursor-pointer ${logoClasses}`}
 						/>
 					</Link>
 					<div className='uppercase tracking-wide | sm:flex-row sm:gap-8'>

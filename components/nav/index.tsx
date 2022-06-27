@@ -3,6 +3,7 @@ import _ from 'lodash';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
 export interface NavProps {
 	toggleNavMenu: () => void;
@@ -12,6 +13,18 @@ export interface NavProps {
 export default function Nav({ toggleNavMenu, isNavMenuOpen }: NavProps) {
 	const { screenSizeIsOrGreaterThan, currentScreenSize, screens } = useScreenSizeContext();
 	const [logoSizeModifier, setLogoSizeModifier] = useState<number>(1.6);
+
+	const router = useRouter();
+	const basePath = router.pathname.split('/')[1];
+
+	const textColor = (() => {
+		switch (basePath) {
+			case 'work':
+				return !isNavMenuOpen ? 'bg-black' : 'bg-white';
+			default:
+				return 'bg-white';
+		}
+	})();
 
 	useEffect(() => {
 		if (screenSizeIsOrGreaterThan('2xl')) {
@@ -42,6 +55,11 @@ export default function Nav({ toggleNavMenu, isNavMenuOpen }: NavProps) {
 									width={401 / logoSizeModifier}
 									src='/assets/branding/full-logo-white.png'
 									alt='A La Carte Consulting Logo'
+									className={`${
+										basePath === 'work' && !isNavMenuOpen
+											? 'filter brightness-0 grayscale'
+											: ''
+									} transition duration-200`}
 								/>
 							</a>
 						</button>
@@ -50,21 +68,21 @@ export default function Nav({ toggleNavMenu, isNavMenuOpen }: NavProps) {
 						<button className='flex flex-col items-center' onClick={toggleNavMenu}>
 							<div className='group flex flex-col gap-y-1.5'>
 								<div
-									className={`bg-white ml-auto w-8 h-0.5 rounded transition duration-300 | group-hover:bg-mandarin | ${
+									className={`${textColor} ml-auto w-8 h-0.5 rounded transition duration-300 | group-hover:bg-mandarin | ${
 										isNavMenuOpen
 											? 'rotate-45 -translate-y-1 group-hover:bg-darkblue'
 											: ''
 									}`}
 								/>
 								<div
-									className={`bg-white ml-auto w-8 h-0.5 rounded transition duration-300 | group-hover:bg-mandarin | ${
+									className={`${textColor} ml-auto w-8 h-0.5 rounded transition duration-300 | group-hover:bg-mandarin | ${
 										isNavMenuOpen
 											? 'rotate-[135deg] -translate-y-3 group-hover:bg-darkblue'
 											: ''
 									}`}
 								/>
 								<div
-									className={`bg-white w-10 h-0.5 rounded transition duration-300 | group-hover:bg-mandarin | ${
+									className={`${textColor} w-10 h-0.5 rounded transition duration-300 | group-hover:bg-mandarin | ${
 										isNavMenuOpen ? 'group-hover:bg-darkblue' : ''
 									}`}
 								/>

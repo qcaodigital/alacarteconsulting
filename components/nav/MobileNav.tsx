@@ -16,6 +16,7 @@ export default function MobileNav() {
 		: router.pathname.split('/')[1] === 'services'
 		? 'light'
 		: 'dark';
+
 	const toggleHbm = () =>
 		setHbmOpened((curr) => {
 			if (!curr) {
@@ -28,45 +29,19 @@ export default function MobileNav() {
 
 	return (
 		<>
-			<ul
-				className={`flex justify-between items-center w-screen px-4 gap-4 relative z-40 ${
-					colorMode === 'light' ? 'text-white' : ''
-				}`}
-			>
-				{/* <li>
-					<a href='https://instagram.com' target='_blank' rel='noopener noreferrer'>
-						<FontAwesomeIcon icon={faInstagram} size='2x' className='scale-[.80]' />
-					</a>
-				</li> */}
-				<li onClick={hbmOpened ? toggleHbm : undefined}>
-					<Link href='/' passHref>
-						<div>
-							<Image
-								loading='eager'
-								src={`${
-									colorMode === 'light'
-										? '/branding/logo-short-white.png'
-										: '/branding/logo-short.png'
-								}`}
-								width={110}
-								height={49.5}
-								className='cursor-pointer'
+			<ul>
+				<li>
+					<button>
+						<a href='/'>
+							<img
+								src='/assets/branding/full-logo-white.png'
 								alt='A La Carte Consulting Logo'
 							/>
-						</div>
-					</Link>
+						</a>
+					</button>
 				</li>
-				<li className='pointer-cursor'>
-					<HamburgerMenuIcon
-						opened={hbmOpened}
-						onClick={toggleHbm}
-						colorMode={colorMode}
-					/>
-				</li>
+				<li></li>
 			</ul>
-			<AnimatePresence>
-				{hbmOpened && <HamburgerMenu key='hbm' toggleHbm={toggleHbm} />}
-			</AnimatePresence>
 		</>
 	);
 }

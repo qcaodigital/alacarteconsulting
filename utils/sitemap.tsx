@@ -15,8 +15,8 @@ export interface INavItem {
 
 export const sitemap: INavItem[] = [
 	{
-		href: '/about',
-		label: 'About',
+		href: '/',
+		label: 'Home',
 	},
 	{
 		href: '/services',
@@ -28,38 +28,12 @@ export const sitemap: INavItem[] = [
 		],
 	},
 	{
-		href: '/',
-		label: (
-			<div style={{ width: '250px', height: '88.75px', position: 'relative' }}>
-				<Image
-					quality={65}
-					src='/branding/logo-light.png'
-					alt='A La Carte Consulting Logo'
-					layout='fill'
-					objectFit='contain'
-				/>
-			</div>
-		),
-		darkModeLabel: (
-			<div style={{ width: '250px', height: '88.75px', position: 'relative' }}>
-				<Image
-					src='/branding/logo-white.png'
-					alt='A La Carte Consulting Logo'
-					layout='fill'
-					objectFit='contain'
-				/>
-			</div>
-		),
+		href: '/work',
+		label: 'Our Work',
 	},
 	{
-		href: '/work',
-		label: (
-			<div className='flex flex-col text-center cursor-pointer'>
-				<p>Our</p>
-				<p>Work</p>
-			</div>
-		),
-		labelAsString: 'Our Work',
+		href: '/about',
+		label: 'About',
 	},
 	{
 		href: '/contact',

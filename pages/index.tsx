@@ -1,9 +1,9 @@
 import { fadeInOut } from 'utils/fadeInOut';
 import { motion, Variants } from 'framer-motion';
 import Head from 'next/head';
+import { useScreenSizeContext } from 'utils/useScreenSizeContext';
 import Link from 'next/link';
-import { Button } from 'components/common/Button';
-import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
+import ButtonNew from '@/components/common/ButtonNew';
 
 const fadeInOnView: Variants = {
 	hidden: { opacity: 0 },
@@ -18,8 +18,10 @@ const fadeInOnViewProps = {
 };
 
 export default function Home() {
+	const { screenSizeIsOrGreaterThan } = useScreenSizeContext();
+
 	return (
-		<motion.main key='home' {...fadeInOut}>
+		<motion.main key='home' {...fadeInOut} className='overflow-x-hidden'>
 			<Head>
 				<title>A La Carte Consulting</title>
 				<meta
@@ -29,92 +31,105 @@ export default function Home() {
 					the way you want, and how you want it.'
 				/>
 			</Head>
-			<section className='relative layout-tall'>
-				<motion.header
-					className='relative z-10 flex flex-col gap-8 justify-center items-center px-[10%] text-center'
-					{...fadeInOnViewProps}
-				>
-					<motion.h1
-						className='font-mon font-medium text-2xl leading-normal | sm:text-3xl | md:max-w-[20ch]'
-						variants={fadeInOnView}
-					>
-						Strategies & solutions
-						<span className='font-semibold italic'> made to order.</span>
-					</motion.h1>
-					<motion.h2
-						className='font-light tracking-wider max-w-[55ch]'
-						variants={fadeInOnView}
-					>
-						By supporting business owners and operators with innovative solutions, we
-						are empowering them to organize, revitalize, and navigate their businesses
-						in a rapidly changing landscape.
-					</motion.h2>
-					<motion.div variants={fadeInOnView}>
-						<Button>
-							<Link href='/services/business-planning'>Our Services</Link>
-						</Button>
-					</motion.div>
-				</motion.header>
-			</section>
-			<section className='layout py-10 flex items-center justify-center bg-brown/90 | md:py-40'>
-				<div className='grid grid-rows-2 gap-8 | md:grid-rows-1 md:grid-cols-2 md:gap-[5vw] | lg:gap-24'>
-					<motion.div
-						className='relative scale-75 | md:scale-[unset] md:top-[-10%] lg:top-[-16%]'
-						{...fadeInOnViewProps}
-					>
-						<Parallax>
-							<motion.img
-								variants={fadeInOnView}
-								className='absolute top-[10%] right-[7.5%] z-30 h-80 w-80 object-cover object-center | lg:right-[10%] lg:h-96 lg:w-96'
-								src='/images/home-copy-one.jpeg'
-								alt='Two masked restaurant employees with white aprons in front of a computer'
-							/>
-						</Parallax>
-						<motion.img
-							variants={fadeInOnView}
-							className='absolute-center left-[40%] top-[60%] z-20 | sm:left-1/3 | md:scale-75 | lg:scale-[85%] lg:left-[10%] lg:top-2/3'
-							src='/images/home-copy-shape.png'
-							alt='A La Carte Consulting Logo Minimzed'
-						/>
-						<motion.img
-							variants={fadeInOnView}
-							className='absolute right-0 top-[65%] z-10 h-52 w-52 object-cover object-center | lg:h-72 lg:w-72'
-							src='/images/home-copy-two.jpeg'
-							alt='Bistro food laid out in take out containers'
-						/>
-					</motion.div>
-					<motion.div
-						className='flex flex-col justify-center items-center gap-6 py-8 text-center | md:text-left md:items-start'
-						{...fadeInOnViewProps}
-					>
-						<motion.div
-							className='text-white leading-relaxed max-w-[40ch]'
-							variants={fadeInOnView}
-						>
-							<h3 className='inline underline text-buttercream text-2xl max-w-[17ch] uppercase font-mon font-medium leading-tight mr-[.5ch]'>
-								Our Mission
-							</h3>
-							<span>
-								is to provide the hospitality sector with comprehensive business
-								strategies that work to improve operations, increase profitability,
-								and define an efficient path to success.
+			<section className='relative flex flex-col py-40 px-[10%] bg-darkblue | md:px-[5%] md:pl-[50%] md:py-56 | lg:pl-[45%] lg:h-screen lg:justify-center'>
+				<header className='relative z-20 text-white flex flex-col gap-y-8 text-center | md:translate-x-[-10%] md:text-left | lg:translate-x-0'>
+					<h1 className='relative z-20 flex flex-col text-2xl font-mon uppercase font-semibold tracking-wide | sm:text-3xl | md:text-4xl | lg:text-5xl | 2xl:text-6xl'>
+						<span className='flex flex-col items-center justify-center | sm:flex-row | md:flex-col md:items-start'>
+							<span>Strategies&nbsp;</span>
+							<span className='text-mandarin flex'>
+								&&nbsp;<span className='text-white'>Solutions</span>
 							</span>
-						</motion.div>
-						<motion.p
-							className='text-white leading-relaxed max-w-[40ch]'
-							variants={fadeInOnView}
-						>
-							As in the namesake of our business, we adapt to what you need so you’ll
-							never pay for service that won’t significantly impact your operation.
-							Our plans are 100% customizable so that everyone from startup businesses
-							to minor event planning is able to take advantage of our expertise.
-						</motion.p>
-						<motion.div variants={fadeInOnView}>
-							<Button color='white'>
-								<Link href='/about'>About Us</Link>
-							</Button>
-						</motion.div>
-					</motion.div>
+						</span>
+						<span>
+							<span>Made To Order</span>
+							<span className='text-mandarin'>.</span>
+						</span>
+					</h1>
+					<p className='md:w-5/6 | lg:w-96'>
+						By supprting small business owners and operators with innovative solutions,
+						we are empowering them to organize, revitalize, and navigate their
+						businesses in a rapdily changing landscape.
+					</p>
+				</header>
+				{screenSizeIsOrGreaterThan('md') && (
+					<div className='absolute bottom-0 left-[7.5%] w-full pointer-events-none translate-y-[20%] | lg:translate-y-[27.5%]'>
+						<img src='/assets/graphics/frying-pan.png' className='h-auto w-[2000px]' />
+					</div>
+				)}
+			</section>
+			<section className='py-20 px-[10%] text-center | md:py-40 md:text-left | lg:h-screen lg:flex lg:flex-col lg:justify-center'>
+				<header className='text-darkblue inline-flex items-center flex-col gap-y-8 | md:items-start'>
+					<h2 className='text-darkblue text-2xl font-mon uppercase font-semibold tracking-wide | sm:text-3xl | md:text-4xl md:flex md:items-end | lg:text-5xl | 2xl:text-6xl'>
+						<span className='md:flex md:flex-col'>
+							<span>Our&nbsp;</span>
+							<span>Mission</span>
+						</span>
+						<span className='text-mandarin'>.</span>
+					</h2>
+					<div className='flex flex-col gap-y-4 | md:w-3/4 | lg:w-1/2 | xl:w-5/12'>
+						<p>
+							To provide the hospitality sector with comprehensive business strategies
+							that work to improve operations, increase profitability, and define an
+							efficient path to success.
+						</p>
+						<p>
+							As in the namesake of our business, we adapt to what you need so you'll
+							never pay for the service that won't significantly impact your
+							operation. Our plans are 100% customizable so that everyone from startup
+							businesses to minor event planning is able to take advantage of our
+							expertise.
+						</p>
+					</div>
+					<ButtonNew
+						mainBgColor='bg-darkblue'
+						hoverTextColor='hover:text-mandarin'
+						hoverBorderColor='hover:border-mandarin'
+						className='hover:bg-opacity-0'
+					>
+						<Link href='/about'>About Us</Link>
+					</ButtonNew>
+				</header>
+			</section>
+			<section className='relative overflow-hidden bg-lightmandarin text-white font-mon py-20 px-[10%] text-center flex flex-col gap-y-8 | md:py-40 md:text-left md:gap-y-16 | lg:h-screen lg:justify-center'>
+				<header className='md:grid md:grid-cols-8'>
+					<h3 className='text-2xl font-mon uppercase font-semibold tracking-wide | sm:text-3xl | md:text-4xl md:col-start-5 md:col-span-4 md:flex md:items-end | lg:text-5xl | 2xl:text-6xl'>
+						<span className='md:flex md:flex-col'>
+							<span>Firing up</span>
+							<span> our process</span>
+						</span>
+						<span className='ml-0.5 text-darkblue'>.</span>
+					</h3>
+				</header>
+				<div className='flex flex-col items-center gap-y-8 | md:grid md:grid-cols-8 md:gap-y-4'>
+					<img
+						className='h-20 | md:col-start-5'
+						src='/assets/graphics/heart-hands.png'
+						alt='Blue hands holding and making a heart'
+					/>
+					<p className='text-xl font-semibold uppercaseq | md:col-start-5 md:col-span-4 | lg:text-2xl'>
+						<span>Reaching out to us</span>
+						<span className='ml-1 text-darkblue'>.</span>
+					</p>
+					<p className='md:col-start-5 md:col-span-4'>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus quaerat,
+						eius molestiae ex aspernatur ullam iusto explicabo eaque dolorem sequi est
+						molestias praesentium modi inventore magni commodi reprehenderit quisquam
+						odio quidem nihil debitis ea qui? Amet perferendis facere voluptatibus quis
+						facilis. Fugit distinctio nihil expedita sed ratione, cum nobis iusto?
+					</p>
+					<ButtonNew
+						className='w-48 border-opacity-100 border-white md:col-start-5 md:col-span-2 md:mt-2 | hover:bg-darkblue hover:bg-opacity-100'
+						mainBgColor=''
+						hoverTextColor='hover:text-white'
+						hoverBorderColor='hover:border-darkblue'
+					>
+						<Link href='/contact'>Contact Us</Link>
+					</ButtonNew>
+					<img
+						className='hidden absolute bottom-0 left-[25%] -translate-x-1/2 z-50 | md:block md:h-[85%] | lg:h-[95%] | 2xl:scale-105'
+						src='/assets/graphics/flame.png'
+						alt='vector graphic flame'
+					/>
 				</div>
 			</section>
 		</motion.main>

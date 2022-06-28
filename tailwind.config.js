@@ -6,6 +6,8 @@ module.exports = {
 		colors: {
 			buttercream: '#FDF3DC',
 			yellow: '#FCD672',
+			orange: '#fbaa60',
+			lightmandarin: '#ff5c4d',
 			mandarin: '#FF4D00',
 			red: '#F32735',
 			cayenne: '#C1272D',
@@ -15,15 +17,18 @@ module.exports = {
 			white: '#f7f7f7',
 			grey: '#f2f2f2',
 			black: '#2f2f2f',
+			lightblue: '#005bea',
+			darkblue: '#0B1F65',
+			skyblue: '#63DCF4',
 		},
 		fontFamily: {
 			mon: ['Montserrat'],
 			nun: ['Nunito Sans'],
 		},
 		extend: {
-			backgroundImage: (theme) => ({
-				'home-hero': "url('/images/home-hero.jpeg')",
-			}),
+			// backgroundImage: (theme) => ({
+			// 	'home-hero': "url('/images/home-hero.jpeg')",
+			// }),
 		},
 	},
 	variants: {

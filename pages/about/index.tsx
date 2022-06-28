@@ -1,26 +1,8 @@
 import { fadeInOut } from '@/utils/fadeInOut';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
-
-interface ProfileProps {
-	image: string;
-	title: string;
-	name: string;
-	description: string;
-}
-
-function Profile({ image, title, name, description }: ProfileProps) {
-	return (
-		<li className='flex flex-col gap-8 w-full | md:w-72'>
-			<img className='w-full object-cover | md:h-96 md:w-72' src={image} alt={name} />
-			<div className='flex flex-col gap-2'>
-				<p className='uppercase font-medium'>{title}</p>
-				<p className='font-bold tracking-wider uppercase text-xl'>{name}</p>
-				<p>{description}</p>
-			</div>
-		</li>
-	);
-}
+import { ReactSVG } from 'react-svg';
+import { profiles } from './profiles';
 
 export default function About() {
 	return (
@@ -28,45 +10,69 @@ export default function About() {
 			<Head>
 				<title>A La Carte Consulting | About</title>
 			</Head>
-			<section className='relative layout-tall shadow-sm'>
-				<div className='relative z-10 flex flex-col justify-center items-center gap-4'>
-					<img
-						src='/graphics/svg/icon-team.svg'
-						alt='icon of two peoeple standing next to each other'
-						className='w-28'
-					/>
-					<h1 className='font-bold text-4xl'>Meet the Team</h1>
-					<h2 className='max-w-prose text-center leading-relaxed font-mon font-medium px-4'>
-						A La Carte Restaurant Business Solutions is a comprehensive resource for
-						both startups and existing businesses. Our team holds years of experience in
-						the foodservice industry from front of the house to the back of the house.
-						Whether you’re struggling to reduce food waste, aren’t sure how to improve
-						operating margins, or you just need guidance on how to set up your business
-						for current and future success, we can work with you to find a solution.
-					</h2>
-				</div>
+			<section className='relative bg-lightmandarin py-40 px-[10%] flex flex-col gap-y-8 overflow-hidden | lg:h-screen lg:justify-center'>
+				<header className='text-center text-white uppercase text-mon font-semibold tracking-wide text-3xl | md:text-5xl md:text-left md:font-bold | lg:text-5xl | 2xl:text-6xl'>
+					<h1 className='flex flex-col'>
+						<span>A team </span>
+						<span>
+							<span className='text-lightblue'>steeped </span>
+							<span>in </span>
+						</span>
+						<span>
+							<span>experience</span>
+							<span className='text-lightblue'>.</span>
+						</span>
+					</h1>
+				</header>
+				<p className='text-white text-center | md:text-left md:w-[37.5%] | lg:w-1/2'>
+					A La Carte Restaurant Business Solutions is a comprehensive resource for both
+					startups and existing businesses. Our team holds years of experience in the
+					foodservice industry from front of the house to the back of the house. Whether
+					you’re struggling to reduce food waste, aren’t sure how to improve operating
+					margins, or you just need guidance on how to set up your business for current
+					and future success, we can work with you to find a solution.
+				</p>
+				<ReactSVG
+					src='/assets/graphics/teapot.svg'
+					// className='absolute top-[52.5%] -translate-y-1/2 right-[-2%] w-[65%] max-w-5xl z-0 hidden | md:block'
+					className='absolute top-[52.5%] -translate-y-1/2 right-[-25%] w-full max-w-5xl z-0 hidden | md:block | xl:right-[-2%] xl:w-[65%]'
+				/>
 			</section>
-			<section className='px-4 py-8 bg-white/30 | md:py-16'>
-				<ul className='flex justify-center gap-8 max-w-6xl mx-auto flex-col | md:gap-16 md:flex-row'>
-					<Profile
-						image='/images/takeshi-nishikawa-alacarteconsulting.jpg'
-						name='Takeshi Nishikawa'
-						title='Operational Strategy'
-						description='From an early age in Japan, Takeshi found his love for cooking through helping out his grandmother in the family kitchen. After moving to the US, he pursued his culinary career and graduated from the New England Culinary Institute. He’s worked in many high-profile D.C. restaurants including Maestro at Ritz-Carlton Tysons Corner, Restaurant Eve, VOLT, New Heights, PRG Hospitality, and Roses Restaurant Group. When he isn’t in his chef’s coat, you can find him studying foreign languages or biking the local trails.'
+			<section className='relative bg-white px-[10%] py-20 | lg:px-[15%]'>
+				<div className='hidden absolute top-0 bottom-0 left-0 w-48 bg-orange | md:block | lg:w-[20%]'>
+					<ReactSVG
+						src='/assets/graphics/teapot-water.svg'
+						className='absolute right-1/2 -top-16 w-full'
 					/>
-					<Profile
-						image='/images/laura-nishikawa-alacarteconsulting.jpg'
-						name='Laura Nishikawa'
-						title='Graphic Design'
-						description='Laura has always had a passion for art, starting with her very first pack of crayons. In high school, she found she could combine her love for art and computers within the field of Graphic Design. In her career she has lent her design and illustrative talents to many industries including retail, publication, and event production. She’s created front-end web graphics, corporate ebooks, video event graphic support, and multiple print collateral. When she’s not designing, you can find Laura painting or reading a sci-fi novel.'
-					/>
-					<Profile
-						image='/images/quan-cao-alacarteconsulting.jpg'
-						name='Quan Cao'
-						title='Software Engineering'
-						description='From hospitality management to software development, Quan comes to our team bringing expertise from both worlds. With nearly a decade of experience in managing FOH in restaurants, including working alongside Takeshi at PRG Hospitality, and three years as a developer, he knows what a restaurant needs to succeed and can bring digital business solutions to life. Short of spending time with his wife and golden retriever, you’ll usually find him out dining the city or fishing the Chesapeake Bay.'
-					/>
-				</ul>
+				</div>
+				<div className='flex flex-col gap-y-16 | md:justify-center'>
+					{profiles.map((p) => (
+						<article
+							key={p.name}
+							className='flex flex-col-reverse items-center gap-y-8 | md:flex-row md:gap-x-16 | md:first-of-type:pt-16 | md:last-of-type:pb-16'
+						>
+							<div className='w-64 | md:w-1/2 md:max-w-[24rem]'>
+								<img src={p.image} alt='' className='border-2 border-darkblue/5' />
+							</div>
+							<div className='text-center | md:text-left md:w-1/2 md:max-w-2xl'>
+								<div className='flex flex-row justify-center | md:block '>
+									{p.name.split(' ').map((n, idx) => (
+										<p
+											key={`${n}-${idx}`}
+											className='text-2xl uppercase font-semibold text-darkblue | md:text-4xl md:font-bold | 2xl:text-5xl'
+										>
+											{n}&nbsp;
+										</p>
+									))}
+								</div>
+								<p className='uppercase text-mandarin | md:font-semi-bold'>
+									{p.title}
+								</p>
+								<p className='text-darkblue mt-4'>{p.description}</p>
+							</div>
+						</article>
+					))}
+				</div>
 			</section>
 		</motion.main>
 	);

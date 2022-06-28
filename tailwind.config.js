@@ -19,6 +19,7 @@ module.exports = {
 			black: '#2f2f2f',
 			lightblue: '#005bea',
 			darkblue: '#0B1F65',
+			skyblue: '#63DCF4',
 		},
 		fontFamily: {
 			mon: ['Montserrat'],

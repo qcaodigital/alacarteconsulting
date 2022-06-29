@@ -2,7 +2,7 @@ import { fadeInOut } from '@/utils/fadeInOut';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
 import { ReactSVG } from 'react-svg';
-import { profiles } from './profiles';
+import { profiles } from 'public/assets/data/profiles';
 
 export default function About() {
 	return (

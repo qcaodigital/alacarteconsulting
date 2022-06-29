@@ -38,7 +38,7 @@ export default function NavMenu() {
 				<li className='cursor-pointer'>
 					{!isMainMenu && (
 						<p
-							className='transition duration-300 flex gap-x-3 | hover:text-darkblue'
+							className='transition duration-300 flex gap-x-3 justify-center | lg:justify-start | hover:text-darkblue'
 							onClick={() => setCurrentMenu(sitemap)}
 						>
 							<span>

@@ -116,7 +116,7 @@ export const SubSection = ({
 			{reverse && (
 				<ReactSVG
 					src={svg}
-					className='my-4 max-w-md justify-self-center | md:mb-auto | xl:justify-self-end'
+					className='my-4 max-w-md justify-self-center hidden | md:block md:mb-auto | xl:justify-self-end'
 				/>
 			)}
 			<div
@@ -136,7 +136,7 @@ export const SubSection = ({
 			{!reverse && (
 				<ReactSVG
 					src={svg}
-					className='my-4 max-w-md justify-self-center | md:mb-auto | xl:justify-self-start'
+					className='my-4 max-w-md justify-self-center hidden | md:block md:mb-auto | xl:justify-self-start'
 				/>
 			)}
 		</section>

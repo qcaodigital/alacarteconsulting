@@ -1,5 +1,5 @@
 import { fadeInOut } from 'utils/fadeInOut';
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Head from 'next/head';
 import { useScreenSizeContext } from 'utils/useScreenSizeContext';
 import Link from 'next/link';

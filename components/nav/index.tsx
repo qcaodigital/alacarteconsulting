@@ -49,7 +49,7 @@ export default function Nav({ toggleNavMenu, isNavMenuOpen }: NavProps) {
 			>
 				<ul className='flex justify-between items-center'>
 					<li>
-						<button>
+						<button onClick={() => (router.pathname === '/' ? toggleNavMenu() : false)}>
 							<Link href='/'>
 								<Image
 									height={141 / logoSizeModifier}

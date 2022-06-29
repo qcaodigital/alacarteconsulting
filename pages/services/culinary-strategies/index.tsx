@@ -8,7 +8,7 @@ export default function CulinaryStrategies() {
 	const { screenSizeIsOrGreaterThan } = useScreenSizeContext();
 
 	return (
-		<motion.main key='about' {...fadeInOut}>
+		<motion.main key='services-culinary' {...fadeInOut}>
 			<Head>
 				<title>A La Carte Consulting | About</title>
 			</Head>

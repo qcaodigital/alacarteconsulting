@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 
 const FooterLink = ({ children }: { children: ReactElement }) => (
-	<li className='cursor-pointer relative transition duration-200 | after:block after:absolute after:w-full after:h-[1px] after:bg-black after:scale-x-0 after:transition after:duration-300 | hover:after:scale-x-100 hover:opacity-75'>
+	<li className='cursor-pointer relative transition duration-200 | hover:opacity-50'>
 		{children}
 	</li>
 );
@@ -40,6 +40,8 @@ export default function Footer() {
 				return 'bg-orange text-black';
 			case 'contact':
 				return 'bg-darkblue text-white';
+			case 'services':
+				return 'bg-lightmandarin text-white';
 			default:
 				return 'bg-white';
 		}
@@ -48,6 +50,8 @@ export default function Footer() {
 	const logoClasses = (() => {
 		switch (basePath) {
 			case 'contact':
+				return '';
+			case 'services':
 				return '';
 			default:
 				return 'filter grayscale brightness-0 ';

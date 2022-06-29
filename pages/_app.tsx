@@ -14,7 +14,7 @@ import { fadeInOut } from '@/utils/fadeInOut';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import { useEffect, useState } from 'react';
 import { NavMenu } from 'components/nav/menu';
-import router, { useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 config.autoAddCss = false;
 
 function MyApp({ Component, pageProps }: AppProps) {

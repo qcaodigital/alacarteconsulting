@@ -5,17 +5,17 @@ import { useScreenSizeContext } from 'utils/useScreenSizeContext';
 import Link from 'next/link';
 import ButtonNew from '@/components/common/ButtonNew';
 
-const fadeInOnView: Variants = {
-	hidden: { opacity: 0 },
-	show: { opacity: 1, transition: { staggerChildren: 0.25, duration: 1 } },
-};
+// const fadeInOnView: Variants = {
+// 	hidden: { opacity: 0 },
+// 	show: { opacity: 1, transition: { staggerChildren: 0.25, duration: 1 } },
+// };
 
-const fadeInOnViewProps = {
-	initial: 'hidden',
-	whileInView: 'show',
-	variants: fadeInOnView,
-	viewport: { margin: '100px' },
-};
+// const fadeInOnViewProps = {
+// 	initial: 'hidden',
+// 	whileInView: 'show',
+// 	variants: fadeInOnView,
+// 	viewport: { margin: '100px' },
+// };
 
 export default function Home() {
 	const { screenSizeIsOrGreaterThan } = useScreenSizeContext();

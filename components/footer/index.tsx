@@ -19,9 +19,6 @@ const listAnimation = {
 };
 
 export default function Footer() {
-	const [subpathParent, setSubpathParent] = useState<
-		{ label: string; basePath: string } | undefined
-	>();
 	const [openSubpath, setOpenSubpath] = useState<ISubpathItem[] | undefined>();
 	const router = useRouter();
 	const history = router.pathname;
@@ -29,7 +26,6 @@ export default function Footer() {
 
 	const resetFooterNav = () => {
 		setOpenSubpath(undefined);
-		setSubpathParent(undefined);
 	};
 
 	useEffect(resetFooterNav, [history]);
@@ -92,13 +88,6 @@ export default function Footer() {
 														key={item.href}
 														onClick={() => {
 															setOpenSubpath(item.subpaths);
-															setSubpathParent({
-																label:
-																	typeof item.label === 'string'
-																		? item.label
-																		: item.labelAsString ?? '',
-																basePath: item.href || '/',
-															});
 														}}
 													>
 														{typeof item.label === 'string'

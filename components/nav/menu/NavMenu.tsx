@@ -38,13 +38,15 @@ export default function NavMenu() {
 				<li className='cursor-pointer'>
 					{!isMainMenu && (
 						<p
-							className='transition duration-300 flex gap-x-3 justify-center | lg:justify-start | hover:text-darkblue'
+							className='transition duration-300 justify-center | lg:justify-start | hover:text-darkblue'
 							onClick={() => setCurrentMenu(sitemap)}
 						>
-							<span>
-								<FontAwesomeIcon icon={faArrowLeft} />
+							<span className='relative'>
+								<span>Back</span>
+								<span className='absolute pb-1 top-1/2 right-full -translate-y-1/2 -translate-x-1/2 | lg:pb-2 | xl:pb-3'>
+									<FontAwesomeIcon icon={faArrowLeft} className='text-base' />
+								</span>
 							</span>
-							<span>Back</span>
 						</p>
 					)}
 				</li>

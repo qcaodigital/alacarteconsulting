@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { INavItem, sitemap } from 'utils/sitemap';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useMemo, useState } from 'react';
 import _ from 'lodash';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

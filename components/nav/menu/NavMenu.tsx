@@ -17,7 +17,7 @@ export default function NavMenu() {
 				className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-center text-2xl text-white uppercase font-mon font-semibold flex flex-col gap-y-2 | lg:left-[20%] lg:text-left lg:text-3xl | xl:text-4xl'
 			>
 				{sitemap.map((item) => (
-					<li className='transition duration-300 | hover:text-darkblue'>
+					<li key={item.href} className='transition duration-300 | hover:text-darkblue'>
 						<Link href={item.href}>{item.label}</Link>
 					</li>
 				))}

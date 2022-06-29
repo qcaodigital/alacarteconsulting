@@ -1,10 +1,6 @@
 import Head from 'next/head';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons';
-import { useScreenSizeContext } from 'utils/useScreenSizeContext';
 import { fadeInOut } from 'utils/fadeInOut';
 import { motion } from 'framer-motion';
-import { Button } from 'components/common/Button';
 import { toast } from 'react-toastify';
 import _ from 'lodash';
 import { useForm } from 'react-hook-form';
@@ -12,18 +8,6 @@ import emailjs from 'emailjs-com';
 import ButtonNew from '@/components/common/ButtonNew';
 
 export default function Contact() {
-	const { screenSizeIs } = useScreenSizeContext();
-	// function submitDisabled(e: MouseEvent) {
-	// 	e.preventDefault();
-	// 	toast.error(
-	// 		'Email server error. Please contact us directly at info@alacarteconsulting.co',
-	// 		{
-	// 			type: toast.TYPE.ERROR,
-	// 			theme: 'light',
-	// 		}
-	// 	);
-	// }
-
 	const { handleSubmit, register, reset } = useForm();
 
 	function onSubmit() {

@@ -73,11 +73,11 @@ export default function Home() {
 							efficient path to success.
 						</p>
 						<p>
-							As in the namesake of our business, we adapt to what you need so you'll
-							never pay for the service that won't significantly impact your
-							operation. Our plans are 100% customizable so that everyone from startup
-							businesses to minor event planning is able to take advantage of our
-							expertise.
+							As in the namesake of our business, we adapt to what you need so
+							you&apos;ll never pay for the service that won&apos;t significantly
+							impact your operation. Our plans are 100% customizable so that everyone
+							from startup businesses to minor event planning is able to take
+							advantage of our expertise.
 						</p>
 					</div>
 					<ButtonNew

@@ -126,7 +126,7 @@ export default function Contact() {
 							hoverBorderColor='hover:border-lightblue'
 							className='border-lightblue w-32 | hover:bg-white'
 						>
-							Let's go
+							Let&apos;s go
 						</ButtonNew>
 					</div>
 				</form>

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 export interface NavProps {
 	toggleNavMenu: () => void;
@@ -49,7 +50,7 @@ export default function Nav({ toggleNavMenu, isNavMenuOpen }: NavProps) {
 				<ul className='flex justify-between items-center'>
 					<li>
 						<button>
-							<a href='/'>
+							<Link href='/'>
 								<Image
 									height={141 / logoSizeModifier}
 									width={401 / logoSizeModifier}
@@ -61,7 +62,7 @@ export default function Nav({ toggleNavMenu, isNavMenuOpen }: NavProps) {
 											: ''
 									} transition duration-200`}
 								/>
-							</a>
+							</Link>
 						</button>
 					</li>
 					<li>

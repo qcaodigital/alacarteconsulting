@@ -65,20 +65,20 @@ export default function Nav({ toggleNavMenu, isNavMenuOpen }: NavProps) {
 							</Link>
 						</button>
 					</li>
-					<li>
+					<li className='mt-3'>
 						<button className='flex flex-col items-center' onClick={toggleNavMenu}>
 							<div className='group flex flex-col gap-y-1.5'>
 								<div
 									className={`${textColor} ml-auto w-8 h-0.5 rounded transition duration-300 | group-hover:bg-mandarin | ${
 										isNavMenuOpen
-											? 'rotate-45 -translate-y-1 group-hover:bg-darkblue'
+											? 'rotate-45 translate-y-0 group-hover:bg-darkblue'
 											: ''
 									}`}
 								/>
 								<div
 									className={`${textColor} ml-auto w-8 h-0.5 rounded transition duration-300 | group-hover:bg-mandarin | ${
 										isNavMenuOpen
-											? 'rotate-[135deg] -translate-y-3 group-hover:bg-darkblue'
+											? 'rotate-[135deg] -translate-y-2 group-hover:bg-darkblue'
 											: ''
 									}`}
 								/>

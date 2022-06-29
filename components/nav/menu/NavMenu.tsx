@@ -33,7 +33,7 @@ export default function NavMenu() {
 				animate={{ opacity: 1 }}
 				exit={{ opacity: 0 }}
 				key={currentMenu[0].href || '1'}
-				className='w-4 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-center text-2xl text-white uppercase font-mon font-semibold flex flex-col gap-y-2 | lg:left-[10%] lg:text-left lg:text-3xl | xl:text-4xl'
+				className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-center text-2xl text-white uppercase font-mon font-semibold flex flex-col gap-y-2 | lg:left-[20%] lg:-translate-x-0 lg:text-left lg:text-3xl | xl:text-4xl'
 			>
 				<li className='cursor-pointer'>
 					{!isMainMenu && (

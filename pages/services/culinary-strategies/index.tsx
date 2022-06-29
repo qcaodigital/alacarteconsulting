@@ -35,7 +35,7 @@ export default function CulinaryStrategies() {
 					</h1>
 				</header>
 			</section>
-			<section className='flex flex-col gap-y-16 bg-lightmandarin px-[10%] py-16 text-white | md:pt-56 md:gap-y-4 md:-mb-96 | lg:gap-y-8 | xl:pt-80 xl:mb-[-36rem]'>
+			<section className='flex flex-col gap-y-16 bg-lightmandarin px-[10%] pt-16 text-white | md:pb-16 md:pt-56 md:gap-y-4 md:-mb-96 | lg:gap-y-8 | xl:pt-80 xl:mb-[-36rem]'>
 				<SubSection
 					label={['Menu', 'development']}
 					text='Menus are the core of every food and beverage operation. A well

@@ -4,7 +4,7 @@ export interface ISubpathItem {
 }
 
 export interface INavItem {
-	href: string;
+	href?: string;
 	label: string | JSX.Element;
 	labelAsString?: string;
 	subpaths?: ISubpathItem[];
@@ -17,12 +17,11 @@ export const sitemap: INavItem[] = [
 		label: 'Home',
 	},
 	{
-		href: '/services',
 		label: 'Services',
 		subpaths: [
-			{ href: '/culinary-strategies', label: 'Culinary Strategies' },
-			{ href: '/business-planning', label: 'Business Planning' },
-			{ href: '/marketing', label: 'Marketing' },
+			{ href: '/services/culinary-strategies', label: 'Culinary Strategies' },
+			{ href: '/services/business-planning', label: 'Business Planning' },
+			{ href: '/services/marketing', label: 'Marketing' },
 		],
 	},
 	{

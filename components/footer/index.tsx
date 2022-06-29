@@ -81,7 +81,7 @@ export default function Footer() {
 										(typeof item.label === 'string' || item.labelAsString) &&
 										!openSubpath && (
 											<FooterLink key={item.href}>
-												{!item.subpaths ? (
+												{!item.subpaths && item.href ? (
 													<Link href={item.href}>
 														{typeof item.label === 'string'
 															? item.label
@@ -97,7 +97,7 @@ export default function Footer() {
 																	typeof item.label === 'string'
 																		? item.label
 																		: item.labelAsString ?? '',
-																basePath: item.href,
+																basePath: item.href || '/',
 															});
 														}}
 													>
@@ -125,9 +125,7 @@ export default function Footer() {
 									</li>
 									{openSubpath.map((item) => (
 										<FooterLink key={item.href}>
-											<Link href={subpathParent?.basePath + item.href}>
-												{item.label}
-											</Link>
+											<Link href={item.href}>{item.label}</Link>
 										</FooterLink>
 									))}
 								</motion.ul>

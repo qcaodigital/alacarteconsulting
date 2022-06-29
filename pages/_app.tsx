@@ -49,7 +49,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 					/>
 					<link rel='manifest' href='/favicons/site.webmanifest' />
 				</Head>
-				<motion.div className='font-nun text-black overflow-x-hidden' {...fadeInOut}>
+				<motion.div className='font-nun text-black' {...fadeInOut}>
 					<Nav
 						toggleNavMenu={() => setIsNavMenuOpen((curr) => !curr)}
 						isNavMenuOpen={isNavMenuOpen}

@@ -10,7 +10,7 @@ export default function CulinaryStrategies() {
 	return (
 		<motion.main key='services-culinary' {...fadeInOut}>
 			<Head>
-				<title>A La Carte Consulting | About</title>
+				<title>A La Carte Consulting | Culinary Strategies</title>
 			</Head>
 			<section className='bg-darkblue h-[50vh] px-[10%] flex flex-col justify-center pt-[5%] | md:py-72 | xl:px-[12.5%]'>
 				<header className='text-white uppercase font-mon font-semibold tracking-wide text-4xl | md:text-5xl md:font-bold | lg:text-left | 2xl:text-6xl 2xl:px-[12.5%]'>

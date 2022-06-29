@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 export interface ISubpathItem {
 	label: string;
 	href: string;
